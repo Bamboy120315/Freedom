@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Freedom</string>
+
+    <!-- 下拉刷新 SmartRefresh 所需 start -->
+    <string name="srl_header_pulling">下拉刷新</string>
+    <string name="srl_header_release">松手开始刷新</string>
+    <string name="srl_header_refreshing">正在刷新…</string>
+    <string name="srl_header_loading">加载中…</string>
+    <string name="srl_header_finish">刷新成功</string>
+    <string name="srl_header_failed">刷新失败</string>
+    <string name="srl_header_update">\'上次更新\' M-d HH:mm</string>
+    <string name="srl_header_secondary">Release To Second Floor</string>
+
+    <string name="srl_footer_pulling">继续下拉</string>
+    <string name="srl_footer_release">松手开始加载</string>
+    <string name="srl_footer_loading">加载中…</string>
+    <string name="srl_footer_refreshing">Wait For Refreshing…</string>
+    <string name="srl_footer_finish">读取成功</string>
+    <string name="srl_footer_failed">读取失败</string>
+    <string name="srl_footer_nothing">没有更多数据</string>
+
+    <string name="srl_content_empty">The content view in SmartRefreshLayout is empty. Do you forget to add it in xml layout file?</string>
+    <string name="srl_component_falsify" formatted="false">%s falsify area,\n Represents the height[%.1fdp] of drag at run time,\n It does not show anything.</string>
+    <!-- 下拉刷新 SmartRefresh 所需 end -->
 </resources>

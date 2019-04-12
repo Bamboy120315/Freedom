@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bamboy.freedom">
 
+    <!-- 检测刘海所需的权限 -->
+    <meta-data
+        android:name="android.notch_support"
+        android:value="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -9,16 +14,34 @@
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".page.main.MainActivity">
+
+        <activity android:name=".page.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".page.news.ActNews" />
-        <activity android:name=".page.music.ActMusic" />
-        <activity android:name=".page.mix.ActMix"></activity>
+
+        <!-- 新闻列表 -->
+        <activity android:name=".page.ActNews" />
+
+        <!-- 音乐列表 -->
+        <activity android:name=".page.ActMusic" />
+
+        <!-- 混合列表 -->
+        <activity android:name=".page.ActMix" />
+
+        <!-- 下拉刷新列表 ==》默认风格 -->
+        <activity android:name=".page.ActSmartRefresh" />
+
+        <!-- 下拉刷新列表 ==》经典风格 -->
+        <activity android:name=".page.ActSmartRefreshClassice" />
+
+        <!-- 下拉刷新列表 ==》个人中心 -->
+        <activity
+            android:name=".page.ActSmartRefreshPersonalCenter"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
