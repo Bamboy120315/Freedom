@@ -182,15 +182,10 @@ public class ActLoadFooter extends AppCompatActivity implements FreedomCallback 
             if (refreshLayout != null) {
                 refreshLayout.setNoMoreData(true);
             }
-
-            // 如果一条数据都没读到，说明是最后一页，就不用刷新列表，故return；
-            if (list.size() == 0) {
-                return;
-            }
         }
 
         // 如果mList为空，则进行初始化
-        if (BUtil.isNull(mList)) {
+        if (mList == null) {
             mList = new ArrayList();
         }
 
@@ -199,8 +194,11 @@ public class ActLoadFooter extends AppCompatActivity implements FreedomCallback 
         page++;
 
         if (mAdapter != null) {
-            refreshLayout.finishLoadMore();
             mAdapter.notifyDataSetChanged();
+        }
+        if (refreshLayout != null){
+            refreshLayout.finishLoadMore();
+            refreshLayout.finishRefresh();
         }
     }
 
