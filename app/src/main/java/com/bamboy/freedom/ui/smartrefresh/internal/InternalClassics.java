@@ -47,7 +47,6 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
     protected RefreshKernel mRefreshKernel;
     protected PaintDrawable mArrowDrawable;
     protected PaintDrawable mProgressDrawable;
-//    protected SpinnerStyle mSpinnerStyle = SpinnerStyle.Translate;
     protected Integer mAccentColor;
     protected Integer mPrimaryColor;
     protected int mBackgroundColor;
@@ -55,8 +54,6 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
     protected int mPaddingTop = 20;
     protected int mPaddingBottom = 20;
     protected int mMinHeightOfContent = 0;
-
-    //<editor-fold desc="RelativeLayout">
 
     public InternalClassics(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
@@ -173,18 +170,10 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
         return (T) this;
     }
 
-    //</editor-fold>
-
-    //<editor-fold desc="RefreshHeader">
     @Override
     public void onInitialized(@NonNull RefreshKernel kernel, int height, int maxDragHeight) {
         mRefreshKernel = kernel;
         mRefreshKernel.requestDrawBackgroundFor(this, mBackgroundColor);
-//        if (this instanceof RefreshHeader) {
-//            mRefreshKernel.requestDrawBackgroundForHeader(mBackgroundColor);
-//        } else if (this instanceof RefreshFooter) {
-//            mRefreshKernel.requestDrawBackgroundForFooter(mBackgroundColor);
-//        }
     }
 
     @Override
@@ -232,29 +221,11 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
             if (mAccentColor == null) {
                 if (colors.length > 1) {
                     setAccentColor(colors[1]);
-//                } else {
-//                    setAccentColor(colors[0] == 0xffffffff ? 0xff666666 : 0xffffffff);
                 }
                 mAccentColor = null;
             }
         }
     }
-
-//    @NonNull
-//    @Override
-//    public SpinnerStyle getSpinnerStyle() {
-//        return mSpinnerStyle;
-//    }
-
-    //</editor-fold>
-
-    //<editor-fold desc="API">
-
-//    public T setProgressBitmap(Bitmap bitmap) {
-//        mProgressDrawable = null;
-//        mProgressView.setImageBitmap(bitmap);
-//        return self();
-//    }
 
     public T setProgressDrawable(Drawable drawable) {
         mProgressDrawable = null;
@@ -266,11 +237,7 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
         mProgressView.setImageResource(resId);
         return self();
     }
-//    public T setArrowBitmap(Bitmap bitmap) {
-//        mArrowDrawable = null;
-//        mArrowView.setImageBitmap(bitmap);
-//        return self();
-//    }
+
     public T setArrowDrawable(Drawable drawable) {
         mArrowDrawable = null;
         mArrowView.setImageDrawable(drawable);
@@ -291,11 +258,6 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
         mBackgroundColor = mPrimaryColor = primaryColor;
         if (mRefreshKernel != null) {
             mRefreshKernel.requestDrawBackgroundFor(this, mPrimaryColor);
-//            if (this instanceof RefreshHeader) {
-//                mRefreshKernel.requestDrawBackgroundForHeader(mPrimaryColor);
-//            } else if (this instanceof RefreshFooter) {
-//                mRefreshKernel.requestDrawBackgroundForFooter(mPrimaryColor);
-//            }
         }
         return self();
     }
@@ -339,18 +301,6 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
         return self();
     }
 
-//    public T setTextSizeTitle(int unit, float size) {
-//        mTitleText.setTextSize(unit, size);
-//        if (mRefreshKernel != null) {
-//            if (this instanceof RefreshHeader) {
-//                mRefreshKernel.requestRemeasureHeightForHeader();
-//            } else if (this instanceof RefreshFooter) {
-//                mRefreshKernel.requestRemeasureHeightForFooter();
-//            }
-//        }
-//        return self();
-//    }
-
     public T setDrawableMarginRight(float dp) {
         final View arrowView = mArrowView;
         final View progressView = mProgressView;
@@ -361,15 +311,6 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
         progressView.setLayoutParams(lpProgress);
         return self();
     }
-
-//    public T setDrawableMarginRightPx(int px) {
-//        MarginLayoutParams lpArrow = (MarginLayoutParams)mArrowView.getLayoutParams();
-//        MarginLayoutParams lpProgress = (MarginLayoutParams)mProgressView.getLayoutParams();
-//        lpArrow.rightMargin = lpProgress.rightMargin = px;
-//        mArrowView.setLayoutParams(lpArrow);
-//        mProgressView.setLayoutParams(lpProgress);
-//        return self();
-//    }
 
     public T setDrawableSize(float dp) {
         final View arrowView = mArrowView;
@@ -383,16 +324,6 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
         return self();
     }
 
-//    public T setDrawableSizePx(int px) {
-//        ViewGroup.LayoutParams lpArrow = mArrowView.getLayoutParams();
-//        ViewGroup.LayoutParams lpProgress = mProgressView.getLayoutParams();
-//        lpArrow.width = lpProgress.width = px;
-//        lpArrow.height = lpProgress.height = px;
-//        mArrowView.setLayoutParams(lpArrow);
-//        mProgressView.setLayoutParams(lpProgress);
-//        return self();
-//    }
-
     public T setDrawableArrowSize(float dp) {
         final View arrowView = mArrowView;
         ViewGroup.LayoutParams lpArrow = arrowView.getLayoutParams();
@@ -400,14 +331,6 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
         arrowView.setLayoutParams(lpArrow);
         return self();
     }
-
-//    public T setDrawableArrowSizePx(int px) {
-//        ViewGroup.LayoutParams lpArrow = mArrowView.getLayoutParams();
-//        lpArrow.width = px;
-//        lpArrow.height = px;
-//        mArrowView.setLayoutParams(lpArrow);
-//        return self();
-//    }
 
     public T setDrawableProgressSize(float dp) {
         final View progressView = mProgressView;
@@ -417,38 +340,5 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
         return self();
     }
 
-//    public T setDrawableProgressSizePx(int px) {
-//        ViewGroup.LayoutParams lpProgress = mProgressView.getLayoutParams();
-//        lpProgress.width = px;
-//        lpProgress.height = px;
-//        mProgressView.setLayoutParams(lpProgress);
-//        return self();
-//    }
-
-//    /**
-//     * @deprecated 使用 findViewById(ID_IMAGE_ARROW) 代替
-//     */
-//    @Deprecated
-//    public ImageView getArrowView() {
-//        return mArrowView;
-//    }
-//
-//    /**
-//     * @deprecated 使用 findViewById(ID_IMAGE_PROGRESS) 代替
-//     */
-//    @Deprecated
-//    public ImageView getProgressView() {
-//        return mProgressView;
-//    }
-//
-//    /**
-//     * @deprecated 使用 findViewById(ID_TEXT_TITLE) 代替
-//     */
-//    @Deprecated
-//    public TextView getTitleText() {
-//        return mTitleText;
-//    }
-
-    //</editor-fold>
 
 }

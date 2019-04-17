@@ -1,9 +1,8 @@
-package com.bamboy.freedom.page.fbean;
+package com.bamboy.freedom.fbean;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -11,54 +10,65 @@ import com.bamboy.freedom.R;
 import com.bamboy.freedom.ui.freedom.FreedomBean;
 import com.bamboy.freedom.ui.freedom.ViewHolderBindListener;
 import com.bamboy.freedom.ui.freedom.ViewHolderManager;
-import com.bamboy.freedom.ui.freedom.manager.ManagerA;
+import com.bamboy.freedom.ui.freedom.manager.ManagerB;
 
 import java.util.List;
 
 /**
- * 新闻条目Bean
- * <p>
+ * 音乐条目Bean
+ * <p/>
  * Created by Bamboy on 2017/5/10.
  */
-public class FBeanNewsImg extends FreedomBean {
+public class FBeanMusic extends FreedomBean {
 
-    /**
-     * 新闻图片
-     */
-    private int imgId;
     /**
      * 新闻标题
      */
-    private String title;
+    private String song;
+    /**
+     * 新闻内容
+     */
+    private String singer;
 
-    public FBeanNewsImg() {
+    public FBeanMusic() {
     }
 
     /**
      * 构造
      *
-     * @param imgId 新闻图片
-     * @param title 新闻标题
+     * @param song   歌曲
+     * @param singer 歌手
      */
-    public FBeanNewsImg(int imgId, String title) {
-        this.imgId = imgId;
-        this.title = title;
+    public FBeanMusic(String song, String singer) {
+        this.song = song;
+        this.singer = singer;
     }
 
-    public int getImgId() {
-        return imgId;
+    public String getSong() {
+        return song;
     }
 
-    public void setImgId(int imgId) {
-        this.imgId = imgId;
+    public void setSong(String song) {
+        this.song = song;
     }
 
-    public String getTitle() {
-        return title;
+    public String getSinger() {
+        return singer;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setSinger(String singer) {
+        this.singer = singer;
+    }
+
+    /**
+     * 当前条目占屏幕的二分之一
+     *
+     * @param spanCount 分割总数
+     * @return
+     */
+    @Override
+    public int getSpanSize(int spanCount) {
+        return spanCount / 2;
     }
 
     //==============================================================================================
@@ -67,7 +77,7 @@ public class FBeanNewsImg extends FreedomBean {
 
     @Override
     protected void initItemType() {
-        setItemType(ManagerA.ITEM_TYPE_NEWS_IMG);
+        setItemType(ManagerB.ITEM_TYPE_MUSIC);
     }
 
     @Override
@@ -76,26 +86,12 @@ public class FBeanNewsImg extends FreedomBean {
         setViewHolderBindListener(new ViewHolderBindListener() {
             @Override
             public void onBindViewHolder(final Context context, final ViewHolderManager.ViewHolder viewHolder, final int position) {
-                final NewsImgViewHolder vh = (NewsImgViewHolder) viewHolder;
+                final MusicViewHolder vh = (MusicViewHolder) viewHolder;
 
-                vh.iv_img.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        // 设置宽高比
-                        RelativeLayout.LayoutParams params =
-                                new RelativeLayout.LayoutParams(
-                                        -1,
-                                        vh.iv_img.getWidth() * 250 / 500);
-                        vh.iv_img.setLayoutParams(params);
+                vh.tv_song.setText(getSong());
+                vh.tv_singer.setText(getSinger());
 
-                        // 显示图片
-                        vh.iv_img.setImageResource(getImgId());
-                    }
-                });
-
-                vh.tv_title.setText(getTitle());
-
-                vh.rl_root.setOnClickListener(new View.OnClickListener() {
+                vh.rl_music.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         // 点击事件
@@ -121,19 +117,18 @@ public class FBeanNewsImg extends FreedomBean {
     /**
      * ViewHolder --> 主页的按钮
      */
-    public static class NewsImgViewHolder extends ViewHolderManager.ViewHolder {
-        public RelativeLayout rl_root;
-        public ImageView iv_img;
-        public TextView tv_title;
+    public static class MusicViewHolder extends ViewHolderManager.ViewHolder {
+        public RelativeLayout rl_music;
+        public TextView tv_song;
+        public TextView tv_singer;
 
-        public NewsImgViewHolder(ViewGroup viewGroup) {
+        public MusicViewHolder(ViewGroup viewGroup) {
             // 两个参数，第一个viewGroup不解释，第二个即本ViewHolder对应的LayoutXml
-            super(viewGroup, R.layout.fitem_news_img);
+            super(viewGroup, R.layout.fitem_music);
 
-            rl_root = itemView.findViewById(R.id.rl_root);
-            iv_img = itemView.findViewById(R.id.iv_img);
-            tv_title = itemView.findViewById(R.id.tv_title);
+            rl_music = (RelativeLayout) itemView.findViewById(R.id.rl_music);
+            tv_song = (TextView) itemView.findViewById(R.id.tv_song);
+            tv_singer = (TextView) itemView.findViewById(R.id.tv_singer);
         }
-
     }
 }

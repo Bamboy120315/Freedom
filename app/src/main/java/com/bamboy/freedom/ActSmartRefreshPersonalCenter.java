@@ -1,4 +1,4 @@
-package com.bamboy.freedom.page;
+package com.bamboy.freedom;
 
 import android.graphics.Color;
 import android.os.Build;
@@ -8,7 +8,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +18,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bamboy.freedom.R;
-import com.bamboy.freedom.page.fbean.FBeanDialogueLeft;
-import com.bamboy.freedom.page.fbean.FBeanDialogueRight;
-import com.bamboy.freedom.page.fbean.FBeanMusic;
-import com.bamboy.freedom.page.fbean.FBeanNewsImg;
-import com.bamboy.freedom.page.fbean.FBeanNewsText;
-import com.bamboy.freedom.page.fbean.FBeanPersonalAssets;
-import com.bamboy.freedom.page.fbean.FBeanPersonalInfo;
+import com.bamboy.freedom.fbean.FBeanDialogueLeft;
+import com.bamboy.freedom.fbean.FBeanDialogueRight;
+import com.bamboy.freedom.fbean.FBeanMusic;
+import com.bamboy.freedom.fbean.FBeanNewsImg;
+import com.bamboy.freedom.fbean.FBeanNewsText;
+import com.bamboy.freedom.fbean.FBeanPersonalAssets;
+import com.bamboy.freedom.fbean.FBeanPersonalInfo;
+import com.bamboy.freedom.fbean.FBeanText;
 import com.bamboy.freedom.ui.freedom.FreedomAdapter;
 import com.bamboy.freedom.ui.freedom.FreedomBean;
 import com.bamboy.freedom.ui.freedom.FreedomCallback;
@@ -89,9 +88,6 @@ public class ActSmartRefreshPersonalCenter extends AppCompatActivity implements 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_smartrefresh_personal_center);
-        initBack();
-
-        setTitle("个人中心");
 
         findView();
 
@@ -112,6 +108,9 @@ public class ActSmartRefreshPersonalCenter extends AppCompatActivity implements 
 
                             // 初始化下拉刷新
                             initRefreshLayout();
+
+                            // 进入页面自动加载数据
+                            refreshLayout.autoRefresh();
                         }
                     });
                 } catch (InterruptedException e) {
@@ -239,8 +238,13 @@ public class ActSmartRefreshPersonalCenter extends AppCompatActivity implements 
              */
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                // 模拟3000毫秒后结束刷新
-                refreshLayout.finishRefresh(3000);
+
+                // 加载数据
+                // loadData();
+
+                // 模拟1000毫秒后数据加载完成，
+                // 数据加载完成后调用refreshLayout.finishRefresh()，即可收起刷新头;
+                refreshLayout.finishRefresh(1000);
             }
 
             /**
@@ -249,7 +253,7 @@ public class ActSmartRefreshPersonalCenter extends AppCompatActivity implements 
              * @param header header对象
              * @param success 是否成功
              */
-            @Override
+            /*@Override
             public void onHeaderFinish(RefreshHeader header, boolean success) {
                 super.onHeaderFinish(header, success);
 
@@ -258,7 +262,7 @@ public class ActSmartRefreshPersonalCenter extends AppCompatActivity implements 
                         success ? "刷新成功" : "刷新失败",
                         Toast.LENGTH_SHORT)
                         .show();
-            }
+            }*/
         });
     }
 
@@ -348,12 +352,6 @@ public class ActSmartRefreshPersonalCenter extends AppCompatActivity implements 
      */
     private void initTopImgAlignBottom(final int imgBottom) {
 
-        Log.i("-=-=-=-=", "-------" +
-                "\nimgBottom: " + imgBottom +
-                "\ntopHeight: " + rl_top.getHeight() +
-                "\nHeaderHeight: " + refreshLayout.getHeaderHeight() +
-                "");
-
         int topImgHeight = rl_top.getHeight();
 
         // 图片长度不够，对图片进行拉伸
@@ -364,7 +362,6 @@ public class ActSmartRefreshPersonalCenter extends AppCompatActivity implements 
             // 设置位置，以让头部图片底部对齐
             RelativeLayout.LayoutParams paramsImg = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, topImgHeight);
             iv_top.setLayoutParams(paramsImg);
-
         }
 
         // 设置位置，以让头部图片底部对齐
@@ -443,7 +440,8 @@ public class ActSmartRefreshPersonalCenter extends AppCompatActivity implements 
 
         // 模拟加载数据，往mList里放一些乱七八糟的条目
         mList.add(new FBeanPersonalInfo("六六"));
-        mList.add(new FBeanPersonalAssets("688.88", "6", "600.00", "1680"));
+        mList.add(new FBeanPersonalAssets("688.88", "6", "600.00", "16"));
+        mList.add(new FBeanText(getString(R.string.smartrefresh_personal_center_introduce)));
         mList.add(new FBeanNewsImg(R.drawable.picture_b, "这些水果狗狗不能吃，你知道吗？"));
         mList.add(new FBeanMusic("成都", "赵雷 - 成都"));
         mList.add(new FBeanMusic("成全", "林宥嘉 - 翻唱合集"));
@@ -477,30 +475,4 @@ public class ActSmartRefreshPersonalCenter extends AppCompatActivity implements 
         recycler = findViewById(R.id.recycler);
     }
 
-    /**
-     * TitleBar添加返回按钮
-     */
-    private void initBack() {
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setHomeButtonEnabled(true);
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-    }
-
-    /**
-     * TitleBar返回按钮点击事件
-     *
-     * @param item
-     * @return
-     */
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

@@ -1,11 +1,13 @@
 package com.bamboy.freedom.ui.freedom.manager;
 
-import com.bamboy.freedom.page.fbean.FBeanNewsImg;
-import com.bamboy.freedom.page.fbean.FBeanNewsText;
-import com.bamboy.freedom.page.fbean.FBeanPersonalAssets;
-import com.bamboy.freedom.page.fbean.FBeanPersonalInfo;
-import com.bamboy.freedom.page.fbean.FBeanStartActivityBtn;
-import com.bamboy.freedom.page.fbean.FBeanText;
+import com.bamboy.freedom.fbean.FBeanFootPrompt;
+import com.bamboy.freedom.fbean.FBeanNewsImg;
+import com.bamboy.freedom.fbean.FBeanNewsText;
+import com.bamboy.freedom.fbean.FBeanPagingItem;
+import com.bamboy.freedom.fbean.FBeanPersonalAssets;
+import com.bamboy.freedom.fbean.FBeanPersonalInfo;
+import com.bamboy.freedom.fbean.FBeanStartActivityBtn;
+import com.bamboy.freedom.fbean.FBeanText;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -58,6 +60,14 @@ public class ManagerA {
      * 条目类型 --> 个人资产
      */
     public static final int ITEM_TYPE_PERSONAL_ASSETS = 1005;
+    /**
+     * 条目类型 --> 分页条目
+     */
+    public static final int ITEM_TYPE_PAGING = 1006;
+    /**
+     * 条目类型 --> 分页底部提示文字条目
+     */
+    public static final int ITEM_TYPE_FOOT_PROMPT = 1007;
 
     /**
      * 获取集合
@@ -76,6 +86,8 @@ public class ManagerA {
             itemMap.put(ITEM_TYPE_BUTTON, FBeanStartActivityBtn.BtnViewHolder.class);
             itemMap.put(ITEM_TYPE_PERSONAL_INFO, FBeanPersonalInfo.PersonalInfoViewHolder.class);
             itemMap.put(ITEM_TYPE_PERSONAL_ASSETS, FBeanPersonalAssets.PersonalAssetsViewHolder.class);
+            itemMap.put(ITEM_TYPE_PAGING, FBeanPagingItem.PagingItemViewHolder.class);
+            itemMap.put(ITEM_TYPE_FOOT_PROMPT, FBeanFootPrompt.FootPromptViewHolder.class);
         }
 
         return itemMap;

@@ -1,8 +1,9 @@
-package com.bamboy.freedom.page.fbean;
+package com.bamboy.freedom.fbean;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -19,29 +20,37 @@ import java.util.List;
  * <p>
  * Created by Bamboy on 2017/5/10.
  */
-public class FBeanNewsText extends FreedomBean {
+public class FBeanNewsImg extends FreedomBean {
 
+    /**
+     * 新闻图片
+     */
+    private int imgId;
     /**
      * 新闻标题
      */
     private String title;
-    /**
-     * 新闻内容
-     */
-    private String desc;
 
-    public FBeanNewsText() {
+    public FBeanNewsImg() {
     }
 
     /**
      * 构造
      *
+     * @param imgId 新闻图片
      * @param title 新闻标题
-     * @param desc  新闻内容
      */
-    public FBeanNewsText(String title, String desc) {
+    public FBeanNewsImg(int imgId, String title) {
+        this.imgId = imgId;
         this.title = title;
-        this.desc = desc;
+    }
+
+    public int getImgId() {
+        return imgId;
+    }
+
+    public void setImgId(int imgId) {
+        this.imgId = imgId;
     }
 
     public String getTitle() {
@@ -52,21 +61,13 @@ public class FBeanNewsText extends FreedomBean {
         this.title = title;
     }
 
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
     //==============================================================================================
     //======================= 以 下 是 关 于 条 目 所 需 内 容 ========================================
     //==============================================================================================
 
     @Override
     protected void initItemType() {
-        setItemType(ManagerA.ITEM_TYPE_NEWS_TEXT);
+        setItemType(ManagerA.ITEM_TYPE_NEWS_IMG);
     }
 
     @Override
@@ -75,10 +76,24 @@ public class FBeanNewsText extends FreedomBean {
         setViewHolderBindListener(new ViewHolderBindListener() {
             @Override
             public void onBindViewHolder(final Context context, final ViewHolderManager.ViewHolder viewHolder, final int position) {
-                final NewsTextViewHolder vh = (NewsTextViewHolder) viewHolder;
+                final NewsImgViewHolder vh = (NewsImgViewHolder) viewHolder;
+
+                vh.iv_img.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        // 设置宽高比
+                        RelativeLayout.LayoutParams params =
+                                new RelativeLayout.LayoutParams(
+                                        -1,
+                                        vh.iv_img.getWidth() * 250 / 500);
+                        vh.iv_img.setLayoutParams(params);
+
+                        // 显示图片
+                        vh.iv_img.setImageResource(getImgId());
+                    }
+                });
 
                 vh.tv_title.setText(getTitle());
-                vh.tv_desc.setText(getDesc());
 
                 vh.rl_root.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -106,18 +121,18 @@ public class FBeanNewsText extends FreedomBean {
     /**
      * ViewHolder --> 主页的按钮
      */
-    public static class NewsTextViewHolder extends ViewHolderManager.ViewHolder {
+    public static class NewsImgViewHolder extends ViewHolderManager.ViewHolder {
         public RelativeLayout rl_root;
+        public ImageView iv_img;
         public TextView tv_title;
-        public TextView tv_desc;
 
-        public NewsTextViewHolder(ViewGroup viewGroup) {
+        public NewsImgViewHolder(ViewGroup viewGroup) {
             // 两个参数，第一个viewGroup不解释，第二个即本ViewHolder对应的LayoutXml
-            super(viewGroup, R.layout.fitem_news_text);
+            super(viewGroup, R.layout.fitem_news_img);
 
             rl_root = itemView.findViewById(R.id.rl_root);
+            iv_img = itemView.findViewById(R.id.iv_img);
             tv_title = itemView.findViewById(R.id.tv_title);
-            tv_desc = itemView.findViewById(R.id.tv_desc);
         }
 
     }

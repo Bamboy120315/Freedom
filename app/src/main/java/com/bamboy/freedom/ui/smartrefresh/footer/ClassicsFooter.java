@@ -167,15 +167,6 @@ public class ClassicsFooter extends InternalClassics<ClassicsFooter> implements 
         mTitleText.setText(thisView.isInEditMode() ? mTextLoading : mTextPulling);
     }
 
-//    @Override
-//    protected ClassicsFooter self() {
-//        return this;
-//    }
-
-    //</editor-fold>
-
-    //<editor-fold desc="RefreshFooter">
-
     @Override
     public void onStartAnimator(@NonNull RefreshLayout refreshLayout, int height, int maxDragHeight) {
         if (!mNoMoreData) {
@@ -249,6 +240,5 @@ public class ClassicsFooter extends InternalClassics<ClassicsFooter> implements 
             }
         }
     }
-    //</editor-fold>
 
 }

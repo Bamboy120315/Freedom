@@ -8,7 +8,7 @@
     android:layout_marginRight="16dp"
     android:layout_marginBottom="10dp"
     android:background="@color/white"
-    android:translationZ="20px">
+    android:translationZ="15px">
 
     <ImageView
         android:id="@+id/iv_img"

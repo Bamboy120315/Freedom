@@ -10,15 +10,17 @@
         android:layout_height="match_parent"
         app:srlEnablePreviewInEditMode="false">
 
-        <com.bamboy.freedom.ui.smartrefresh.header.ClassicsHeader
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:overScrollMode="never" />
+
+        <com.bamboy.freedom.ui.smartrefresh.footer.SlopeFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:color="@color/colorPrimary"
+            app:srlClassicsSpinnerStyle="Translate"/>
 
     </com.bamboy.freedom.ui.smartrefresh.SmartRefreshLayout>
 </RelativeLayout>

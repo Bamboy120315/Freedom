@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import com.bamboy.freedom.page.BUtil;
+import com.bamboy.freedom.BUtil;
 
 import java.util.List;
 

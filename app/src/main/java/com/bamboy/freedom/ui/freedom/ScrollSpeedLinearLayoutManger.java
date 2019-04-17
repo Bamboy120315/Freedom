@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 
-import com.bamboy.freedom.page.BUtil;
+import com.bamboy.freedom.BUtil;
 
 /**
  * 动画滑动

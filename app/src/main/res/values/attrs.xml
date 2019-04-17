@@ -12,6 +12,10 @@
     <attr name="srlDrawableArrow" format="reference"/><!--箭头图片-->
     <attr name="srlDrawableProgress" format="reference"/><!--转动图片-->
     <attr name="srlEnableHorizontalDrag" format="boolean"/><!--支持水平拖动-->
+    <!-- 线的粗细 默认值 auto -->
+    <attr name="lineWidth" format="dimension" />
+    <!-- 进度条颜色 默认值 0xFF009E96 -->
+    <attr name="color" format="color" />
 
     <attr name="srlTextPulling" format="string"/>
     <attr name="srlTextLoading" format="string"/>
@@ -88,6 +92,14 @@
         <attr name="srlEnableHorizontalDrag"/>
     </declare-styleable>
 
+    <declare-styleable name="SlopeFooter">
+        <attr name="srlClassicsSpinnerStyle"/>
+        <!-- 线的粗细 默认值 auto -->
+        <attr name="lineWidth" />
+        <!-- 进度条颜色 默认值 0xFF009E96 -->
+        <attr name="color" />
+    </declare-styleable>
+
     <declare-styleable name="BallPulseFooter">
         <attr name="srlClassicsSpinnerStyle"/>
         <attr name="srlAnimatingColor" format="color"/>
@@ -152,9 +164,9 @@
 
     <declare-styleable name="SlopeHeader">
         <!-- 线的粗细 默认值 auto -->
-        <attr name="lineWidth" format="dimension" />
+        <attr name="lineWidth" />
         <!-- 进度条颜色 默认值 0xFF009E96 -->
-        <attr name="color" format="color" />
+        <attr name="color" />
     </declare-styleable>
 
 </resources>

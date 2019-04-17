@@ -1,4 +1,4 @@
-package com.bamboy.freedom.page;
+package com.bamboy.freedom;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,12 +9,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.bamboy.freedom.R;
-import com.bamboy.freedom.page.fbean.FBeanDialogueLeft;
-import com.bamboy.freedom.page.fbean.FBeanDialogueRight;
-import com.bamboy.freedom.page.fbean.FBeanMusic;
-import com.bamboy.freedom.page.fbean.FBeanNewsImg;
-import com.bamboy.freedom.page.fbean.FBeanNewsText;
+import com.bamboy.freedom.fbean.FBeanDialogueLeft;
+import com.bamboy.freedom.fbean.FBeanDialogueRight;
+import com.bamboy.freedom.fbean.FBeanMusic;
+import com.bamboy.freedom.fbean.FBeanNewsImg;
+import com.bamboy.freedom.fbean.FBeanNewsText;
+import com.bamboy.freedom.fbean.FBeanText;
 import com.bamboy.freedom.ui.freedom.FreedomAdapter;
 import com.bamboy.freedom.ui.freedom.FreedomBean;
 import com.bamboy.freedom.ui.freedom.FreedomCallback;
@@ -22,14 +22,13 @@ import com.bamboy.freedom.ui.freedom.ViewHolderManager;
 import com.bamboy.freedom.ui.freedom.manager.ManagerA;
 import com.bamboy.freedom.ui.freedom.manager.ManagerB;
 import com.bamboy.freedom.ui.smartrefresh.SmartRefreshLayout;
-import com.bamboy.freedom.ui.smartrefresh.api.RefreshHeader;
 import com.bamboy.freedom.ui.smartrefresh.api.RefreshLayout;
 import com.bamboy.freedom.ui.smartrefresh.listener.SimpleMultiPurposeListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActSmartRefresh extends AppCompatActivity implements FreedomCallback {
+public class ActSmartRefreshTopFixed extends AppCompatActivity implements FreedomCallback {
 
     /**
      * 下拉刷新容器
@@ -54,10 +53,10 @@ public class ActSmartRefresh extends AppCompatActivity implements FreedomCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_smartrefresh);
+        setContentView(R.layout.act_smartrefresh_top_fixed);
         initBack();
 
-        setTitle("默认风格");
+        setTitle("头部固定");
 
         refreshLayout = findViewById(R.id.refreshLayout);
         recycler = findViewById(R.id.recycler);
@@ -67,6 +66,9 @@ public class ActSmartRefresh extends AppCompatActivity implements FreedomCallbac
 
         // 初始化下拉刷新
         initRefreshLayout();
+
+        // 进入页面自动加载数据
+        refreshLayout.autoRefresh();
     }
 
     /**
@@ -75,7 +77,6 @@ public class ActSmartRefresh extends AppCompatActivity implements FreedomCallbac
     private void initRefreshLayout() {
         // 下拉监听
         refreshLayout.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
-
             /**
              * 开始刷新
              *
@@ -83,21 +84,32 @@ public class ActSmartRefresh extends AppCompatActivity implements FreedomCallbac
              */
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                // 模拟3000毫秒后结束刷新
-                refreshLayout.finishRefresh(3000);
+
+                // 加载数据
+                // loadData();
+
+                // 模拟1000毫秒后数据加载完成，
+                // 数据加载完成后调用refreshLayout.finishRefresh()，即可收起刷新头;
+                refreshLayout.finishRefresh(1000);
             }
 
             /**
-             * 刷新完成
+             * 刷新完成的监听
+             * 不需要可以不写，所以我注释掉了😅
              *
              * @param header header对象
              * @param success 是否成功
              */
-            @Override
+            /*@Override
             public void onHeaderFinish(RefreshHeader header, boolean success) {
                 super.onHeaderFinish(header, success);
-                Toast.makeText(ActSmartRefresh.this, "刷新完成：" + success, Toast.LENGTH_SHORT).show();
-            }
+
+                Toast.makeText(
+                        ActSmartRefreshClassice.this,
+                        success ? "刷新成功" : "刷新失败",
+                        Toast.LENGTH_SHORT)
+                        .show();
+            }*/
         });
     }
 
@@ -163,6 +175,7 @@ public class ActSmartRefresh extends AppCompatActivity implements FreedomCallbac
         mList = new ArrayList();
 
         // 模拟加载数据，往mList里放一些乱七八糟的条目
+        mList.add(new FBeanText(getString(R.string.smartrefresh_top_fixed_introduce)));
         mList.add(new FBeanNewsImg(R.drawable.picture_b, "这些水果狗狗不能吃，你知道吗？"));
         mList.add(new FBeanMusic("成都", "赵雷 - 成都"));
         mList.add(new FBeanMusic("成全", "林宥嘉 - 翻唱合集"));

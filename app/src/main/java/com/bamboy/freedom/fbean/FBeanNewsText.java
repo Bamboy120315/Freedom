@@ -1,4 +1,4 @@
-package com.bamboy.freedom.page.fbean;
+package com.bamboy.freedom.fbean;
 
 import android.content.Context;
 import android.view.View;
@@ -10,65 +10,54 @@ import com.bamboy.freedom.R;
 import com.bamboy.freedom.ui.freedom.FreedomBean;
 import com.bamboy.freedom.ui.freedom.ViewHolderBindListener;
 import com.bamboy.freedom.ui.freedom.ViewHolderManager;
-import com.bamboy.freedom.ui.freedom.manager.ManagerB;
+import com.bamboy.freedom.ui.freedom.manager.ManagerA;
 
 import java.util.List;
 
 /**
- * 音乐条目Bean
- * <p/>
+ * 新闻条目Bean
+ * <p>
  * Created by Bamboy on 2017/5/10.
  */
-public class FBeanMusic extends FreedomBean {
+public class FBeanNewsText extends FreedomBean {
 
     /**
      * 新闻标题
      */
-    private String song;
+    private String title;
     /**
      * 新闻内容
      */
-    private String singer;
+    private String desc;
 
-    public FBeanMusic() {
+    public FBeanNewsText() {
     }
 
     /**
      * 构造
      *
-     * @param song   歌曲
-     * @param singer 歌手
+     * @param title 新闻标题
+     * @param desc  新闻内容
      */
-    public FBeanMusic(String song, String singer) {
-        this.song = song;
-        this.singer = singer;
+    public FBeanNewsText(String title, String desc) {
+        this.title = title;
+        this.desc = desc;
     }
 
-    public String getSong() {
-        return song;
+    public String getTitle() {
+        return title;
     }
 
-    public void setSong(String song) {
-        this.song = song;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getSinger() {
-        return singer;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setSinger(String singer) {
-        this.singer = singer;
-    }
-
-    /**
-     * 当前条目占屏幕的二分之一
-     *
-     * @param spanCount 分割总数
-     * @return
-     */
-    @Override
-    public int getSpanSize(int spanCount) {
-        return spanCount / 2;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     //==============================================================================================
@@ -77,7 +66,7 @@ public class FBeanMusic extends FreedomBean {
 
     @Override
     protected void initItemType() {
-        setItemType(ManagerB.ITEM_TYPE_MUSIC);
+        setItemType(ManagerA.ITEM_TYPE_NEWS_TEXT);
     }
 
     @Override
@@ -86,12 +75,12 @@ public class FBeanMusic extends FreedomBean {
         setViewHolderBindListener(new ViewHolderBindListener() {
             @Override
             public void onBindViewHolder(final Context context, final ViewHolderManager.ViewHolder viewHolder, final int position) {
-                final MusicViewHolder vh = (MusicViewHolder) viewHolder;
+                final NewsTextViewHolder vh = (NewsTextViewHolder) viewHolder;
 
-                vh.tv_song.setText(getSong());
-                vh.tv_singer.setText(getSinger());
+                vh.tv_title.setText(getTitle());
+                vh.tv_desc.setText(getDesc());
 
-                vh.rl_music.setOnClickListener(new View.OnClickListener() {
+                vh.rl_root.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         // 点击事件
@@ -117,18 +106,19 @@ public class FBeanMusic extends FreedomBean {
     /**
      * ViewHolder --> 主页的按钮
      */
-    public static class MusicViewHolder extends ViewHolderManager.ViewHolder {
-        public RelativeLayout rl_music;
-        public TextView tv_song;
-        public TextView tv_singer;
+    public static class NewsTextViewHolder extends ViewHolderManager.ViewHolder {
+        public RelativeLayout rl_root;
+        public TextView tv_title;
+        public TextView tv_desc;
 
-        public MusicViewHolder(ViewGroup viewGroup) {
+        public NewsTextViewHolder(ViewGroup viewGroup) {
             // 两个参数，第一个viewGroup不解释，第二个即本ViewHolder对应的LayoutXml
-            super(viewGroup, R.layout.fitem_music);
+            super(viewGroup, R.layout.fitem_news_text);
 
-            rl_music = (RelativeLayout) itemView.findViewById(R.id.rl_music);
-            tv_song = (TextView) itemView.findViewById(R.id.tv_song);
-            tv_singer = (TextView) itemView.findViewById(R.id.tv_singer);
+            rl_root = itemView.findViewById(R.id.rl_root);
+            tv_title = itemView.findViewById(R.id.tv_title);
+            tv_desc = itemView.findViewById(R.id.tv_desc);
         }
+
     }
 }

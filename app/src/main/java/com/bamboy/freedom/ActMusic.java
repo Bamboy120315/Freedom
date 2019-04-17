@@ -1,4 +1,4 @@
-package com.bamboy.freedom.page;
+package com.bamboy.freedom;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,13 +8,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.bamboy.freedom.R;
 import com.bamboy.freedom.ui.freedom.FreedomAdapter;
 import com.bamboy.freedom.ui.freedom.FreedomBean;
 import com.bamboy.freedom.ui.freedom.FreedomCallback;
 import com.bamboy.freedom.ui.freedom.ViewHolderManager;
 import com.bamboy.freedom.ui.freedom.manager.ManagerB;
-import com.bamboy.freedom.page.fbean.FBeanMusic;
+import com.bamboy.freedom.fbean.FBeanMusic;
 
 import java.util.ArrayList;
 import java.util.List;

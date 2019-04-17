@@ -20,8 +20,6 @@ public interface OnMultiPurposeListener extends OnRefreshLoadMoreListener, OnSta
      */
     void onHeaderMoving(RefreshHeader header, boolean isDragging, float percent, int offset, int headerHeight, int maxDragHeight);
 
-//    void onHeaderPulling(RefreshHeader header, float percent, int offset, int headerHeight, int maxDragHeight);
-//    void onHeaderReleasing(RefreshHeader header, float percent, int offset, int headerHeight, int maxDragHeight);
     void onHeaderReleased(RefreshHeader header, int headerHeight, int maxDragHeight);
     void onHeaderStartAnimator(RefreshHeader header, int headerHeight, int maxDragHeight);
     void onHeaderFinish(RefreshHeader header, boolean success);
@@ -37,8 +35,13 @@ public interface OnMultiPurposeListener extends OnRefreshLoadMoreListener, OnSta
      */
     void onFooterMoving(RefreshFooter footer, boolean isDragging, float percent, int offset, int footerHeight, int maxDragHeight);
 
-//    void onFooterPulling(RefreshFooter footer, float percent, int offset, int footerHeight, int maxDragHeight);
-//    void onFooterReleasing(RefreshFooter footer, float percent, int offset, int footerHeight, int maxDragHeight);
+    /**
+     * 上拉加载监听
+     *
+     * @param footer 底部页脚对象
+     * @param footerHeight 页脚高度
+     * @param maxDragHeight 最大页脚高度
+     */
     void onFooterReleased(RefreshFooter footer, int footerHeight, int maxDragHeight);
     void onFooterStartAnimator(RefreshFooter footer, int footerHeight, int maxDragHeight);
     void onFooterFinish(RefreshFooter footer, boolean success);

@@ -1,4 +1,4 @@
-package com.bamboy.freedom.page;
+package com.bamboy.freedom;
 
 import android.app.Activity;
 import android.content.Context;

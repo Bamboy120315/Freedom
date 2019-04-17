@@ -1,8 +1,7 @@
-package com.bamboy.freedom.page.fbean;
+package com.bamboy.freedom.fbean;
 
 import android.content.Context;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bamboy.freedom.R;

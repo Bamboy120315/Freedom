@@ -1,6 +1,6 @@
 package com.bamboy.freedom.ui.freedom.manager;
 
-import com.bamboy.freedom.page.fbean.FBeanMusic;
+import com.bamboy.freedom.fbean.FBeanMusic;
 
 import java.util.HashMap;
 import java.util.Map;

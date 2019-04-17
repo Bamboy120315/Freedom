@@ -2043,11 +2043,6 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
     public SmartRefreshLayout setHeaderMaxHeight(float maxHeight) {
         float dragRate = maxHeight / mHeaderHeight;
         setHeaderMaxDragRate(dragRate);
-        Log.i("-=-=-=-=", "" +
-                "\nmaxHeight: " + maxHeight +
-                "\nmHeaderHeight: " + mHeaderHeight +
-                "\ndragRate: " + dragRate +
-                "");
         return this;
     }
 

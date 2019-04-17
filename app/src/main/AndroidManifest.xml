@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".page.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,24 +24,33 @@
         </activity>
 
         <!-- 新闻列表 -->
-        <activity android:name=".page.ActNews" />
+        <activity android:name=".ActNews" />
 
         <!-- 音乐列表 -->
-        <activity android:name=".page.ActMusic" />
+        <activity android:name=".ActMusic" />
 
         <!-- 混合列表 -->
-        <activity android:name=".page.ActMix" />
+        <activity android:name=".ActMix" />
 
         <!-- 下拉刷新列表 ==》默认风格 -->
-        <activity android:name=".page.ActSmartRefresh" />
+        <activity android:name=".ActSmartRefresh" />
 
         <!-- 下拉刷新列表 ==》经典风格 -->
-        <activity android:name=".page.ActSmartRefreshClassice" />
+        <activity android:name=".ActSmartRefreshClassice" />
 
         <!-- 下拉刷新列表 ==》个人中心 -->
         <activity
-            android:name=".page.ActSmartRefreshPersonalCenter"
+            android:name=".ActSmartRefreshPersonalCenter"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <!-- 下拉刷新列表 ==》头部固定 -->
+        <activity android:name=".ActSmartRefreshTopFixed" />
+
+        <!-- 分页加载 ==》上拉加载 -->
+        <activity android:name=".ActLoadFooter" />
+
+        <!-- 分页加载 ==》自动、无感加载 -->
+        <activity android:name=".ActLoadAuto" />
     </application>
 
 </manifest>

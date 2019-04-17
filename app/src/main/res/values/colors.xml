@@ -12,6 +12,8 @@
 
     <!-- 灰色 -->
     <color name="grey">#999</color>
+    <!-- 浅灰色 -->
+    <color name="greylight">#CCC</color>
     <!-- 透明灰色 -->
     <color name="grey_t">#6000</color>
 

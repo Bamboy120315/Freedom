@@ -1,4 +1,4 @@
-package com.bamboy.freedom.page;
+package com.bamboy.freedom;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,9 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.bamboy.freedom.R;
-import com.bamboy.freedom.page.fbean.FBeanStartActivityBtn;
-import com.bamboy.freedom.page.fbean.FBeanText;
+import com.bamboy.freedom.fbean.FBeanStartActivityBtn;
+import com.bamboy.freedom.fbean.FBeanText;
 import com.bamboy.freedom.ui.freedom.FreedomAdapter;
 import com.bamboy.freedom.ui.freedom.FreedomBean;
 import com.bamboy.freedom.ui.freedom.FreedomCallback;
@@ -49,6 +48,11 @@ public class MainActivity extends AppCompatActivity implements FreedomCallback {
         mList.add(new FBeanStartActivityBtn("默认风格", ActSmartRefresh.class));
         mList.add(new FBeanStartActivityBtn("经典风格", ActSmartRefreshClassice.class));
         mList.add(new FBeanStartActivityBtn("个人中心", ActSmartRefreshPersonalCenter.class));
+        mList.add(new FBeanStartActivityBtn("头部固定", ActSmartRefreshTopFixed.class));
+
+        mList.add(new FBeanText("分页加载："));
+        mList.add(new FBeanStartActivityBtn("上拉加载", ActLoadFooter.class));
+        mList.add(new FBeanStartActivityBtn("自动、无感加载", ActLoadAuto.class));
 
         mAdapter = new FreedomAdapter(this, mList);
         recycler.setLayoutManager(new LinearLayoutManager(this));

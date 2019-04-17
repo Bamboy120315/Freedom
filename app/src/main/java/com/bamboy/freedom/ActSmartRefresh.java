@@ -1,4 +1,4 @@
-package com.bamboy.freedom.page;
+package com.bamboy.freedom;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,12 +9,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.bamboy.freedom.R;
-import com.bamboy.freedom.page.fbean.FBeanDialogueLeft;
-import com.bamboy.freedom.page.fbean.FBeanDialogueRight;
-import com.bamboy.freedom.page.fbean.FBeanMusic;
-import com.bamboy.freedom.page.fbean.FBeanNewsImg;
-import com.bamboy.freedom.page.fbean.FBeanNewsText;
+import com.bamboy.freedom.fbean.FBeanDialogueLeft;
+import com.bamboy.freedom.fbean.FBeanDialogueRight;
+import com.bamboy.freedom.fbean.FBeanMusic;
+import com.bamboy.freedom.fbean.FBeanNewsImg;
+import com.bamboy.freedom.fbean.FBeanNewsText;
+import com.bamboy.freedom.fbean.FBeanText;
 import com.bamboy.freedom.ui.freedom.FreedomAdapter;
 import com.bamboy.freedom.ui.freedom.FreedomBean;
 import com.bamboy.freedom.ui.freedom.FreedomCallback;
@@ -22,14 +22,13 @@ import com.bamboy.freedom.ui.freedom.ViewHolderManager;
 import com.bamboy.freedom.ui.freedom.manager.ManagerA;
 import com.bamboy.freedom.ui.freedom.manager.ManagerB;
 import com.bamboy.freedom.ui.smartrefresh.SmartRefreshLayout;
-import com.bamboy.freedom.ui.smartrefresh.api.RefreshHeader;
 import com.bamboy.freedom.ui.smartrefresh.api.RefreshLayout;
-import com.bamboy.freedom.ui.smartrefresh.listener.SimpleMultiPurposeListener;
+import com.bamboy.freedom.ui.smartrefresh.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActSmartRefreshClassice extends AppCompatActivity implements FreedomCallback {
+public class ActSmartRefresh extends AppCompatActivity implements FreedomCallback {
 
     /**
      * 下拉刷新容器
@@ -54,10 +53,10 @@ public class ActSmartRefreshClassice extends AppCompatActivity implements Freedo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_smartrefresh_classice);
+        setContentView(R.layout.act_smartrefresh);
         initBack();
 
-        setTitle("经典风格");
+        setTitle("默认风格");
 
         refreshLayout = findViewById(R.id.refreshLayout);
         recycler = findViewById(R.id.recycler);
@@ -67,36 +66,25 @@ public class ActSmartRefreshClassice extends AppCompatActivity implements Freedo
 
         // 初始化下拉刷新
         initRefreshLayout();
+
+        // 进入页面自动加载数据
+        refreshLayout.autoRefresh();
     }
 
     /**
      * 初始化下拉刷新
      */
     private void initRefreshLayout() {
-        // 下拉监听
-        refreshLayout.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
-
-            /**
-             * 开始刷新
-             *
-             * @param refreshLayout
-             */
+        // 下拉刷新监听
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
-            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                // 模拟3000毫秒后结束刷新
-                refreshLayout.finishRefresh(3000);
-            }
+            public void onRefresh(@NonNull final RefreshLayout refreshLayout) {
+                // 加载数据
+                // loadData();
 
-            /**
-             * 刷新完成
-             *
-             * @param header header对象
-             * @param success 是否成功
-             */
-            @Override
-            public void onHeaderFinish(RefreshHeader header, boolean success) {
-                super.onHeaderFinish(header, success);
-                Toast.makeText(ActSmartRefreshClassice.this, "刷新完成：" + success, Toast.LENGTH_SHORT).show();
+                // 模拟1000毫秒后数据加载完成，
+                // 数据加载完成后调用refreshLayout.finishRefresh()，即可收起刷新头;
+                refreshLayout.finishRefresh(1000);
             }
         });
     }
@@ -163,6 +151,7 @@ public class ActSmartRefreshClassice extends AppCompatActivity implements Freedo
         mList = new ArrayList();
 
         // 模拟加载数据，往mList里放一些乱七八糟的条目
+        mList.add(new FBeanText(getString(R.string.smartrefresh_introduce)));
         mList.add(new FBeanNewsImg(R.drawable.picture_b, "这些水果狗狗不能吃，你知道吗？"));
         mList.add(new FBeanMusic("成都", "赵雷 - 成都"));
         mList.add(new FBeanMusic("成全", "林宥嘉 - 翻唱合集"));

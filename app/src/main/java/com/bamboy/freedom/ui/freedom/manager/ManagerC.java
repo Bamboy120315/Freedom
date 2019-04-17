@@ -1,7 +1,7 @@
 package com.bamboy.freedom.ui.freedom.manager;
 
-import com.bamboy.freedom.page.fbean.FBeanDialogueLeft;
-import com.bamboy.freedom.page.fbean.FBeanDialogueRight;
+import com.bamboy.freedom.fbean.FBeanDialogueLeft;
+import com.bamboy.freedom.fbean.FBeanDialogueRight;
 
 import java.util.HashMap;
 import java.util.Map;

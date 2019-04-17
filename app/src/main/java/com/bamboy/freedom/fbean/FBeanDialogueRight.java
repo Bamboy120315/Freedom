@@ -1,4 +1,4 @@
-package com.bamboy.freedom.page.fbean;
+package com.bamboy.freedom.fbean;
 
 import android.content.Context;
 import android.view.View;
@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by 程序猿C on 2017/5/19.
  */
-public class FBeanDialogueLeft extends FreedomBean {
+public class FBeanDialogueRight extends FreedomBean {
 
     /**
      * 名字
@@ -30,7 +30,7 @@ public class FBeanDialogueLeft extends FreedomBean {
     /**
      * 构造
      */
-    public FBeanDialogueLeft() {
+    public FBeanDialogueRight() {
     }
 
     /**
@@ -39,7 +39,7 @@ public class FBeanDialogueLeft extends FreedomBean {
      * @param name    名字
      * @param content 内容
      */
-    public FBeanDialogueLeft(String name, String content) {
+    public FBeanDialogueRight(String name, String content) {
         this.name = name;
         this.content = content;
     }
@@ -83,7 +83,7 @@ public class FBeanDialogueLeft extends FreedomBean {
 
     @Override
     protected void initItemType() {
-        setItemType(ManagerC.ITEM_TYPE_DIALOGUE_LEFT);
+        setItemType(ManagerC.ITEM_TYPE_DIALOGUE_RIGHT);
     }
 
     public static class DialogueViewHolder extends ViewHolderManager.ViewHolder {
@@ -92,7 +92,7 @@ public class FBeanDialogueLeft extends FreedomBean {
         TextView tv_content;
 
         public DialogueViewHolder(ViewGroup viewGroup) {
-            super(viewGroup, R.layout.fitem_dialogue_l);
+            super(viewGroup, R.layout.fitem_dialogue_r);
 
             tv_name = itemView.findViewById(R.id.tv_name);
             tv_content = itemView.findViewById(R.id.tv_content);
