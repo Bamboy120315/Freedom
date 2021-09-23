@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp">
+
+    <ImageView
+        android:layout_width="3dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_introduce"
+        android:layout_alignTop="@+id/tv_introduce"
+        android:layout_alignBottom="@+id/tv_introduce"
+        android:src="@drawable/bg_item_introduce" />
+
+    <!-- 介绍 -->
+    <TextView
+        android:id="@+id/tv_introduce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="2dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="2dp"
+        android:textColor="#666"
+        android:textSize="15sp" />
+
+</RelativeLayout>

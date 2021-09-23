@@ -2,55 +2,50 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bamboy.freedom">
 
-    <!-- 检测刘海所需的权限 -->
-    <meta-data
-        android:name="android.notch_support"
-        android:value="true" />
-
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.Freedom">
+        <activity
+            android:name=".page.CalendarActivity"
+            android:exported="true" />
+        <activity
+            android:name=".page.WeChatItemShakeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".page.DynamicSpanActivity"
+            android:exported="true" />
+        <activity
+            android:name=".page.SingleCheckedActivity"
+            android:exported="true" />
+        <activity
+            android:name=".page.SingleCheckedDefaultActivity"
+            android:exported="true" />
+        <activity
+            android:name=".page.PhotoInfoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".page.PhotoListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".page.AssortedSpanActivity"
+            android:exported="true" />
+        <activity
+            android:name=".page.WeiboActivity"
+            android:exported="true" />
+        <activity
+            android:name=".page.WeiboJsonActivity"
+            android:exported="true" />
+        <activity android:name=".page.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- 新闻列表 -->
-        <activity android:name=".ActNews" />
-
-        <!-- 音乐列表 -->
-        <activity android:name=".ActMusic" />
-
-        <!-- 混合列表 -->
-        <activity android:name=".ActMix" />
-
-        <!-- 下拉刷新列表 ==》默认风格 -->
-        <activity android:name=".ActSmartRefresh" />
-
-        <!-- 下拉刷新列表 ==》经典风格 -->
-        <activity android:name=".ActSmartRefreshClassice" />
-
-        <!-- 下拉刷新列表 ==》个人中心 -->
-        <activity
-            android:name=".ActSmartRefreshPersonalCenter"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <!-- 下拉刷新列表 ==》头部固定 -->
-        <activity android:name=".ActSmartRefreshTopFixed" />
-
-        <!-- 分页加载 ==》上拉加载 -->
-        <activity android:name=".ActLoadFooter" />
-
-        <!-- 分页加载 ==》自动、无感加载 -->
-        <activity android:name=".ActLoadAuto" />
     </application>
 
 </manifest>

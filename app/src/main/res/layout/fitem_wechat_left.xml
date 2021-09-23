@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- 头像 -->
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginVertical="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bg_circle_head"
+        android:elevation="5dp"
+        android:padding="3.5dp" />
+
+    <!-- 昵称 -->
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_toRightOf="@+id/iv_head"
+        android:textColor="@color/primary"
+        android:textSize="14sp" />
+
+    <!-- 内容 -->
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nickname"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="3dp"
+        android:layout_toRightOf="@+id/iv_head"
+        android:background="@color/primary"
+        android:gravity="center_vertical"
+        android:minHeight="40dp"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+</RelativeLayout>

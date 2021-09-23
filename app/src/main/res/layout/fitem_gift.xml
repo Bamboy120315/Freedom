@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp">
+
+    <Space
+        android:id="@+id/space_top"
+        android:layout_width="0dp"
+        android:layout_height="12dp" />
+
+    <!-- 礼物图片 -->
+    <ImageView
+        android:id="@+id/iv_gift"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/space_top"
+        android:layout_centerHorizontal="true" />
+
+    <!-- 礼物名称 -->
+    <TextView
+        android:id="@+id/tv_gift_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_gift"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="热气球"
+        android:textColor="#0a0a0a"
+        android:textSize="14sp" />
+
+    <!-- 弯豆 -->
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_gift_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/iv_rank_beans"
+        android:drawablePadding="3dp"
+        android:gravity="center_vertical"
+        android:text="120,000"
+        android:textColor="#767676"
+        android:textSize="11sp" />
+
+    <Space
+        android:id="@+id/space_bottom"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_below="@+id/tv_price" />
+
+    <!-- 点击层 -->
+    <View
+        android:id="@+id/view_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/space_top"
+        android:layout_alignBottom="@+id/space_bottom"
+        android:alpha="0"
+        android:background="@drawable/border_item_select_gift"
+        android:scaleX="0.8"
+        android:scaleY="0.8" />
+</RelativeLayout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/gray_f5f5f5"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="15dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <!-- 月份日期 -->
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/tv_title"
+                android:textSize="24sp" />
+
+            <!-- 切换月份按钮 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tv_date"
+                android:layout_alignBottom="@+id/tv_date"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp">
+
+                <!-- 上个月 -->
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_back_brief_black" />
+
+                <!-- 下个月 -->
+                <ImageView
+                    android:id="@+id/iv_front"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_toRightOf="@+id/iv_back"
+                    android:padding="7dp"
+                    android:rotation="180"
+                    android:src="@drawable/ic_back_brief_black" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_week_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_date"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="一"
+                    android:textColor="#B3B3B3"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="二"
+                    android:textColor="#B3B3B3"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="三"
+                    android:textColor="#B3B3B3"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="四"
+                    android:textColor="#B3B3B3"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="五"
+                    android:textColor="#B3B3B3"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="六"
+                    android:textColor="#B3B3B3"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="日"
+                    android:textColor="#B3B3B3"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <!-- 今日图标 -->
+            <View
+                android:id="@+id/view_today_dot"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:alpha="0"
+                android:background="@drawable/bg_today_select"
+                android:visibility="gone" />
+
+            <!-- 日历列表 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_below="@+id/ll_week_title"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:overScrollMode="never" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

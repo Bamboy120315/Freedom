@@ -1,1 +1,3 @@
+rootProject.name = "Freedom"
 include ':app'
+include ':freedom'

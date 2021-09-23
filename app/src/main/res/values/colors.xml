@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- 主题色 -->
-    <color name="colorPrimary">#009E96</color>
-    <!-- 主题色 -->
-    <color name="colorPrimaryDark">#009E96</color>
-    <!-- 副色 -->
-    <color name="colorAccent">#FF51BBB5</color>
+    <color name="primary">#009E96</color>
 
-    <!-- 透明色 -->
-    <color name="transparent">#0000</color>
+    <color name="primary_1">#8FADB3</color>
+    <color name="primary_2">#A3C6CC</color>
+    <color name="primary_3">#77B7BF</color>
 
-    <!-- 灰色 -->
-    <color name="grey">#999</color>
-    <!-- 浅灰色 -->
-    <color name="greylight">#CCC</color>
-    <!-- 透明灰色 -->
-    <color name="grey_t">#6000</color>
+    <color name="primary_2_light">#E5ECED</color>
 
-    <!-- 黑色 -->
-    <color name="black">#000</color>
+    <color name="tv_title">#333</color>
+    <color name="tv_count">#666</color>
 
-    <!-- 白色 -->
-    <color name="white">#FFFF</color>
+    <color name="gray_aaa">#AAA</color>
+    <color name="gray_ddd">#DDD</color>
+    <color name="gray_eee">#EEE</color>
+    <color name="gray_f5f5f5">#F5F5F5</color>
 
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
 </resources>
