@@ -62,7 +62,7 @@
 Demo界面也重新设计了一下，  
 后期会更新不同的玩法，  
 来体现插件化的优势与魅力。  
-![玩法Demo](https://upload-images.jianshu.io/upload_images/6179866-03780441169b8b46.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/480)  
+![玩法Demo](https://upload-images.jianshu.io/upload_images/6179866-29d52606768b615f.jpg)   
   
 老话说得好，  
 程序员何苦为难程序员。  
@@ -72,7 +72,7 @@ v4.0的这个核心逻辑只有一百多行的代码，
   
 咱们以第一个Demo为例，  
 这个页面的条目是长这样的：  
-![微博示例_带壳](https://upload-images.jianshu.io/upload_images/6179866-ca4fbb6b3c2a5496.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/480)  
+![微博示例](https://upload-images.jianshu.io/upload_images/6179866-1855dc94b5c30a38.jpg)   
   
 这个Activity的代码是这样的：  
 ![微博列表代码](https://upload-images.jianshu.io/upload_images/6179866-d71784ec4374fe4e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/480)  
