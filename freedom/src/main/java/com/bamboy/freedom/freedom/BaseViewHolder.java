@@ -479,7 +479,11 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
      * 设置条目点击事件（通过ClickCallback）
      */
     public BaseViewHolder setItemClick() {
-        setOnClickListener(itemView);
+        setOnClickListener(itemView, v -> {
+            if (adapter != null && adapter.getItemClickCallback() != null) {
+                adapter.getItemClickCallback().onClick(v, getAdapterPosition(), BaseViewHolder.this);
+            }
+        });
         return this;
     }
 
@@ -504,8 +508,8 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
      */
     public BaseViewHolder setOnClickListener(View view) {
         setOnClickListener(view, v -> {
-            if (adapter != null && adapter.getItemClickCallback() != null) {
-                adapter.getItemClickCallback().onClick(v, getAdapterPosition(), BaseViewHolder.this);
+            if (adapter != null && adapter.getViewClickCallback() != null) {
+                adapter.getViewClickCallback().onClick(v, getAdapterPosition(), BaseViewHolder.this);
             }
         });
         return this;
@@ -515,11 +519,7 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
      * 设置View点击事件
      */
     public BaseViewHolder setOnClickListener(@IdRes final int viewId, View.OnClickListener listener) {
-        setOnClickListener(getView(viewId), v -> {
-            if (adapter != null && adapter.getItemClickCallback() != null) {
-                adapter.getItemClickCallback().onClick(v, getAdapterPosition(), BaseViewHolder.this);
-            }
-        });
+        setOnClickListener(getView(viewId), listener);
         return this;
     }
 
@@ -529,6 +529,24 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
     public BaseViewHolder setOnClickListener(View view, View.OnClickListener listener) {
         if (view != null && listener != null) {
             view.setOnClickListener(listener);
+        }
+        return this;
+    }
+
+    /**
+     * 设置View点击事件
+     */
+    public BaseViewHolder setClickable(@IdRes final int viewId, boolean clickable) {
+        setClickable(getView(viewId), clickable);
+        return this;
+    }
+
+    /**
+     * 设置View是否可点击
+     */
+    public BaseViewHolder setClickable(View view, boolean clickable) {
+        if (view != null) {
+            view.setClickable(clickable);
         }
         return this;
     }

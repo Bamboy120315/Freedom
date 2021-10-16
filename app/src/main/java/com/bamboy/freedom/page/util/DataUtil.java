@@ -38,7 +38,7 @@ public class DataUtil {
 
         list.add(new FitemIntroduce("简单用法示例："));
         list.add(new FitemFunction("仿微博",
-                "单列场景\n单一一种条目类型",
+                "单列场景\n单一一种条目类型\nView点击事件回调Activity示例",
                 R.drawable.iv_example_weibo,
                 WeiboActivity.class));
 

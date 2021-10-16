@@ -10,8 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,18 +22,14 @@ import com.bamboy.freedom.R;
 import com.bamboy.freedom.freedom.BaseViewHolder;
 import com.bamboy.freedom.freedom.FreedomAdapter;
 import com.bamboy.freedom.freedom.FreedomItem;
-import com.bamboy.freedom.freedom.clickcallback.ItemClickCallback;
+import com.bamboy.freedom.freedom.clickcallback.OnClickCallback;
 import com.bamboy.freedom.page.fitem.FitemCalendar;
 import com.bamboy.freedom.page.util.CalendarDataUtil;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
-public class CalendarActivity extends AppCompatActivity implements ItemClickCallback {
+public class CalendarActivity extends AppCompatActivity implements OnClickCallback {
 
     /**
      * 标题
@@ -114,7 +108,7 @@ public class CalendarActivity extends AppCompatActivity implements ItemClickCall
                 }
             });
             recycler.setLayoutManager(manager);
-            mAdapter = new FreedomAdapter(this, mList);
+            mAdapter = new FreedomAdapter(this, mList, this);
             recycler.setAdapter(mAdapter);
         } else {
             mAdapter.notifyDataSetChanged();
@@ -223,8 +217,6 @@ public class CalendarActivity extends AppCompatActivity implements ItemClickCall
 
         // 切换月份
         switchMonth();
-
-        mAdapter.setItemClickCallback(this);
 
         // 跳到当天
         recycler.post(() -> jumpToDay());

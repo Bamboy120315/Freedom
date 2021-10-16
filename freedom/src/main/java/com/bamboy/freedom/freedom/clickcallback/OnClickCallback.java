@@ -10,7 +10,7 @@ import com.bamboy.freedom.freedom.BaseViewHolder;
  * <p/>
  * Created by Bamboy on 2021/7/28.
  */
-public interface ItemClickCallback {
+public interface OnClickCallback {
     /**
      * 点击事件
      *

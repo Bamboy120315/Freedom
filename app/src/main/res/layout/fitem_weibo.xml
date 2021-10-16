@@ -119,6 +119,7 @@
 
         <!-- 转发 -->
         <RelativeLayout
+            android:id="@+id/rl_share"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -150,6 +151,7 @@
 
         <!-- 评论 -->
         <RelativeLayout
+            android:id="@+id/rl_speech"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -181,6 +183,7 @@
 
         <!-- 点赞 -->
         <RelativeLayout
+            android:id="@+id/rl_like"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1">

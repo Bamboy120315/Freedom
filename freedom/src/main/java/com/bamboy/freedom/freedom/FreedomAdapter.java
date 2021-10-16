@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bamboy.freedom.freedom.clickcallback.ItemClickCallback;
-import com.bamboy.freedom.freedom.clickcallback.ItemLongClickCallback;
+import com.bamboy.freedom.freedom.clickcallback.OnClickCallback;
+import com.bamboy.freedom.freedom.clickcallback.OnLongClickCallback;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,11 +21,11 @@ public class FreedomAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     /**
      * 条目点击事件Callback
      */
-    private ItemClickCallback mItemClickCallback;
+    private OnClickCallback mItemClickCallback, mViewClickCallback;
     /**
      * 条目长按事件Callback
      */
-    private ItemLongClickCallback mItemLongClickCallback;
+    private OnLongClickCallback mItemLongClickCallback, mViewLongClickCallback;
     /**
      * 变量集合
      */
@@ -46,10 +46,23 @@ public class FreedomAdapter extends RecyclerView.Adapter<BaseViewHolder> {
      *
      * @param list
      */
-    public FreedomAdapter(Context context, List list, ItemClickCallback callback) {
+    public FreedomAdapter(Context context, List list, OnClickCallback callback) {
         mContext = context;
         mList = list;
         setItemClickCallback(callback);
+    }
+
+    /**
+     * 获取View点击事件
+     *
+     * @return
+     */
+    public OnClickCallback getViewClickCallback() {
+        if (mViewClickCallback == null) {
+            mViewClickCallback = (View view, int position, BaseViewHolder holder) -> {
+            };
+        }
+        return mViewClickCallback;
     }
 
     /**
@@ -57,7 +70,7 @@ public class FreedomAdapter extends RecyclerView.Adapter<BaseViewHolder> {
      *
      * @return
      */
-    public ItemClickCallback getItemClickCallback() {
+    public OnClickCallback getItemClickCallback() {
         if (mItemClickCallback == null) {
             mItemClickCallback = (View view, int position, BaseViewHolder holder) -> {
             };
@@ -66,12 +79,35 @@ public class FreedomAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     }
 
     /**
+     * 设置View点击事件
+     *
+     * @param clickCallback
+     */
+    public void setViewClickCallback(OnClickCallback clickCallback) {
+        this.mViewClickCallback = clickCallback;
+    }
+
+    /**
      * 设置条目点击事件
      *
      * @param clickCallback
      */
-    public void setItemClickCallback(ItemClickCallback clickCallback) {
+    public void setItemClickCallback(OnClickCallback clickCallback) {
         this.mItemClickCallback = clickCallback;
+    }
+
+    /**
+     * 获取View长按事件
+     *
+     * @return
+     */
+    public OnLongClickCallback getViewLongClickCallback() {
+        if (mViewLongClickCallback == null) {
+            mViewLongClickCallback = (View view, int position, BaseViewHolder holder) -> {
+                return false;
+            };
+        }
+        return mViewLongClickCallback;
     }
 
     /**
@@ -79,7 +115,7 @@ public class FreedomAdapter extends RecyclerView.Adapter<BaseViewHolder> {
      *
      * @return
      */
-    public ItemLongClickCallback getItemLongClickCallback() {
+    public OnLongClickCallback getItemLongClickCallback() {
         if (mItemLongClickCallback == null) {
             mItemLongClickCallback = (View view, int position, BaseViewHolder holder) -> {
                 return false;
@@ -89,11 +125,20 @@ public class FreedomAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     }
 
     /**
+     * 设置View长按事件
+     *
+     * @param longClickCallback
+     */
+    public void setViewLondClickCallback(OnLongClickCallback longClickCallback) {
+        this.mViewLongClickCallback = longClickCallback;
+    }
+
+    /**
      * 设置条目长按事件
      *
      * @param longClickCallback
      */
-    public void setItemLondClickCallback(ItemLongClickCallback longClickCallback) {
+    public void setItemLondClickCallback(OnLongClickCallback longClickCallback) {
         this.mItemLongClickCallback = longClickCallback;
     }
 

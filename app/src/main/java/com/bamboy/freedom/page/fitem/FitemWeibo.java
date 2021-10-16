@@ -48,12 +48,6 @@ public class FitemWeibo extends FreedomItem {
      */
     public int likeCount;
 
-    /**
-     * 构造
-     */
-    public FitemWeibo() {
-    }
-
     @Override
     protected int bindLayoutId() {
         return R.layout.fitem_weibo;
@@ -62,33 +56,31 @@ public class FitemWeibo extends FreedomItem {
     @Override
     public void initBindView(Context context, BaseViewHolder vh, List<FreedomItem> list, int position) {
         vh
-
                 // 显示 头像
                 .setImageResource(R.id.iv_head, headId)
-
                 // 显示 昵称
                 .setText(R.id.tv_nickname, nickname)
-
                 // 显示 时间
                 .setText(R.id.tv_time, time)
-
                 // 显示 内容
                 .setText(R.id.tv_content, content)
-
                 // 显示 位置
                 .setText(R.id.tv_location, location == null ? "" : location)
-
                 // 显示 位置容器是否显示
                 .setVisible(R.id.rl_location, !TextUtils.isEmpty(location))
-
                 // 显示 转发数
                 .setText(R.id.tv_share, shareCount <= 0 ? "转发" : String.valueOf(shareCount))
-
                 // 显示 评论数
                 .setText(R.id.tv_speech, speechCount <= 0 ? "评论" : String.valueOf(speechCount))
-
                 // 显示 点赞数
-                .setText(R.id.tv_like, likeCount <= 0 ? "点赞" : String.valueOf(likeCount));
+                .setText(R.id.tv_like, likeCount <= 0 ? "点赞" : String.valueOf(likeCount))
+
+                // 设置点击事件 --> 转发
+                .setOnClickListener(R.id.rl_share)
+                // 设置点击事件 --> 评论
+                .setOnClickListener(R.id.rl_speech)
+                // 设置点击事件 --> 点赞
+                .setOnClickListener(R.id.rl_like);
 
         // 处理内容里面的图片
         if (contentImg <= 0) {
