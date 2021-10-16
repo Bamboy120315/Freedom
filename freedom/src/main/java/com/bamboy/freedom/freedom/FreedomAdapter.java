@@ -29,7 +29,7 @@ public class FreedomAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     /**
      * 变量集合
      */
-    private Map<Integer, Object> mVariateMap;
+    private Map<String, Object> mVariateMap;
 
     /**
      * Adapter 构造
@@ -227,7 +227,7 @@ public class FreedomAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     /**
      * 获取变量
      */
-    public <T extends Object> T getVar(int key, T defaultValue) {
+    public <T extends Object> T getVar(String key, T defaultValue) {
         if (mVariateMap == null) {
             return defaultValue;
         }
@@ -241,7 +241,7 @@ public class FreedomAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     /**
      * 设置变量
      */
-    public void setVar(int key, Object value) {
+    public void setVar(String key, Object value) {
         if (mVariateMap == null) {
             mVariateMap = new HashMap<>();
         }
