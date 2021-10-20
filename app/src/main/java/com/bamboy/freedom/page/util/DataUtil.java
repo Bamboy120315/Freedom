@@ -14,6 +14,7 @@ import com.bamboy.freedom.page.SingleCheckedDefaultActivity;
 import com.bamboy.freedom.page.WeChatItemShakeActivity;
 import com.bamboy.freedom.page.WeiboActivity;
 import com.bamboy.freedom.page.WeiboJsonActivity;
+import com.bamboy.freedom.page.bean.WeiboBean;
 import com.bamboy.freedom.page.fitem.FitemDynamisSpan;
 import com.bamboy.freedom.page.fitem.FitemFunction;
 import com.bamboy.freedom.page.fitem.FitemGift;
@@ -21,6 +22,7 @@ import com.bamboy.freedom.page.fitem.FitemIntroduce;
 import com.bamboy.freedom.page.fitem.FitemPhoto;
 import com.bamboy.freedom.page.fitem.FitemWeChat;
 import com.bamboy.freedom.page.fitem.FitemWeibo;
+import com.bamboy.freedom.page.fitem.FitemWeiboToJSON;
 import com.bamboy.freedom.page.modle.GiftModle;
 
 import java.util.ArrayList;
@@ -85,12 +87,134 @@ public class DataUtil {
 
     /**
      * 获取数据 --> 微博列表
+     *
      * @return
      */
-    public static List<FitemWeibo> getDataToWeiBo(){
-        List<FitemWeibo> list = new ArrayList<>();
+    public static List<WeiboBean> getDataToWeiBo() {
+        List<WeiboBean> list = new ArrayList<>();
 
-        FitemWeibo item_01 = new FitemWeibo();
+        WeiboBean weiboBean_01 = new WeiboBean();
+        weiboBean_01.headId = R.drawable.iv_head_00001;
+        weiboBean_01.nickname = "不吃卤面条";
+        weiboBean_01.time = "15:01";
+        weiboBean_01.content = "扫黑风暴，越更新剧情越拖沓，预告看着挺好看，怎么一到正片就开始拖沓。";
+        weiboBean_01.contentImg = 0;
+        weiboBean_01.location = "上海";
+        weiboBean_01.shareCount = 0;
+        weiboBean_01.speechCount = 3;
+        weiboBean_01.likeCount = 0;
+        list.add(weiboBean_01);
+
+        WeiboBean weiboBean_02 = new WeiboBean();
+        weiboBean_02.headId = R.drawable.iv_head_00002;
+        weiboBean_02.nickname = "西瓜皮味瓜子壳";
+        weiboBean_02.time = "14:56";
+        weiboBean_02.content = "我就想点个鸡排，看哈评价，都能碰到bkpp";
+        weiboBean_02.contentImg = R.drawable.iv_weibo_content_02;
+        weiboBean_02.shareCount = 1;
+        weiboBean_02.speechCount = 0;
+        weiboBean_02.likeCount = 0;
+        list.add(weiboBean_02);
+
+        WeiboBean weiboBean_03 = new WeiboBean();
+        weiboBean_03.headId = R.drawable.iv_head_00003;
+        weiboBean_03.nickname = "XX日报";
+        weiboBean_03.time = "14:40";
+        weiboBean_03.content = "【中广联合会召开座谈会：#对违法失德失范艺人零容忍#】8月19日，中国广播电视社会组织联合会职业道德建设委员会在京召开广播电视文艺工作者加强职业道德建设座谈会，就最近一段时间个别艺人的违法失德失范行为发声。\n制片人张明智，导演郑晓龙、阎建钢……";
+        weiboBean_03.contentImg = R.drawable.iv_weibo_content_03;
+        weiboBean_03.location = "北京";
+        weiboBean_03.shareCount = 54;
+        weiboBean_03.speechCount = 194;
+        weiboBean_03.likeCount = 1009;
+        list.add(weiboBean_03);
+
+        WeiboBean weiboBean_04 = new WeiboBean();
+        weiboBean_04.headId = R.drawable.iv_head_00004;
+        weiboBean_04.nickname = "XX科技";
+        weiboBean_04.time = "2个小时前";
+        weiboBean_04.content = "【LG与韩国酒店合作推广生发头盔】\n\nLG电子宣布将陆续与韩国数家豪华酒店合作，为酒店客户提供免费体验LG生发头盔、超声波洗面奶、超声波身体清洁器和眼部皮肤护肤装置的机会。简单的说就是酒店房间内将会标配这些产品，住多久就可以用多久[杰瑞]。";
+        weiboBean_04.contentImg = R.drawable.iv_weibo_content_04;
+        weiboBean_04.shareCount = 2;
+        weiboBean_04.speechCount = 7;
+        weiboBean_04.likeCount = 2;
+        list.add(weiboBean_04);
+
+        WeiboBean weiboBean_05 = new WeiboBean();
+        weiboBean_05.headId = R.drawable.iv_head_00005;
+        weiboBean_05.nickname = "X视新闻";
+        weiboBean_05.time = "6个小时前";
+        weiboBean_05.content = "【网友：#聂海胜太空照里有我#[哈哈]】今天，两名航天员成功出舱后，#聂海胜和地球合影#。留存“太空大片”↓↓↓网友：地球上有我，所以照片里有我！骄傲了~";
+        weiboBean_05.location = "北京";
+        weiboBean_05.shareCount = 16;
+        weiboBean_05.speechCount = 39;
+        weiboBean_05.likeCount = 188;
+        list.add(weiboBean_05);
+
+        WeiboBean weiboBean_06 = new WeiboBean();
+        weiboBean_06.headId = R.drawable.iv_head_00006;
+        weiboBean_06.nickname = "XX头条";
+        weiboBean_06.time = "今天凌晨";
+        weiboBean_06.content = "据@新华社 消息：中国载人航天工程办公室20日透露，目前，神舟十二号载人飞行任务已经进入第三个月。后续，航天员乘组将继续开展空间科学实验和技术试验，计划9月中旬返回东风着陆场。返回前，神舟飞船还将进行绕飞及径向交会试验。";
+        weiboBean_06.shareCount = 17;
+        weiboBean_06.speechCount = 12;
+        weiboBean_06.likeCount = 92;
+        list.add(weiboBean_06);
+
+        WeiboBean weiboBean_07 = new WeiboBean();
+        weiboBean_07.headId = R.drawable.iv_head_00007;
+        weiboBean_07.nickname = "科技新一";
+        weiboBean_07.time = "昨天";
+        weiboBean_07.content = "一提到拍照好的手机，你第一印象会想到：____________。";
+        weiboBean_07.location = "深圳";
+        weiboBean_07.shareCount = 7;
+        weiboBean_07.speechCount = 135;
+        weiboBean_07.likeCount = 189;
+        list.add(weiboBean_07);
+
+        WeiboBean weiboBean_08 = new WeiboBean();
+        weiboBean_08.headId = R.drawable.iv_head_00008;
+        weiboBean_08.nickname = "X浪新闻热搜热榜";
+        weiboBean_08.time = "昨天";
+        weiboBean_08.content = "一款雪糕，中外市场用两种料？今天#联合利华承认梦龙中外用料双标#，又一个网红产品翻车。网红高端产品为何频繁成全网黑惹众怒？消费者究竟是为了营销买单还是为了品质买单？#网红产品水有多深#？一起来揭密>>";
+        weiboBean_08.shareCount = 7;
+        weiboBean_08.speechCount = 2;
+        weiboBean_08.likeCount = 5;
+        list.add(weiboBean_08);
+
+        WeiboBean weiboBean_09 = new WeiboBean();
+        weiboBean_09.headId = R.drawable.iv_head_00009;
+        weiboBean_09.nickname = "ZXXX知客";
+        weiboBean_09.time = "前天";
+        weiboBean_09.content = "快进到付费宝贝靠前展示？";
+        weiboBean_09.contentImg = R.drawable.iv_weibo_content_09;
+        weiboBean_09.shareCount = 1;
+        weiboBean_09.speechCount = 0;
+        weiboBean_09.likeCount = 20;
+        list.add(weiboBean_09);
+
+        WeiboBean weiboBean_10 = new WeiboBean();
+        weiboBean_10.headId = R.drawable.iv_head_00010;
+        weiboBean_10.nickname = "科技XX";
+        weiboBean_10.time = "8月2日";
+        weiboBean_10.content = "真是起名鬼才 ……";
+        weiboBean_10.contentImg = R.drawable.iv_weibo_content_10;
+        weiboBean_10.location = "杭州";
+        weiboBean_10.shareCount = 1;
+        weiboBean_10.speechCount = 14;
+        weiboBean_10.likeCount = 0;
+        list.add(weiboBean_10);
+
+        return list;
+    }
+
+    /**
+     * 获取数据 --> 微博列表
+     * @return
+     */
+    public static List<FitemWeiboToJSON> getDataToWeiBoToJSON(){
+        List<FitemWeiboToJSON> list = new ArrayList<>();
+
+        FitemWeiboToJSON item_01 = new FitemWeiboToJSON();
         item_01.headId = R.drawable.iv_head_00001;
         item_01.nickname = "不吃卤面条";
         item_01.time = "15:01";
@@ -102,7 +226,7 @@ public class DataUtil {
         item_01.likeCount = 0;
         list.add(item_01);
 
-        FitemWeibo item_02 = new FitemWeibo();
+        FitemWeiboToJSON item_02 = new FitemWeiboToJSON();
         item_02.headId = R.drawable.iv_head_00002;
         item_02.nickname = "西瓜皮味瓜子壳";
         item_02.time = "14:56";
@@ -113,7 +237,7 @@ public class DataUtil {
         item_02.likeCount = 0;
         list.add(item_02);
 
-        FitemWeibo item_03 = new FitemWeibo();
+        FitemWeiboToJSON item_03 = new FitemWeiboToJSON();
         item_03.headId = R.drawable.iv_head_00003;
         item_03.nickname = "XX日报";
         item_03.time = "14:40";
@@ -125,7 +249,7 @@ public class DataUtil {
         item_03.likeCount = 1009;
         list.add(item_03);
 
-        FitemWeibo item_04 = new FitemWeibo();
+        FitemWeiboToJSON item_04 = new FitemWeiboToJSON();
         item_04.headId = R.drawable.iv_head_00004;
         item_04.nickname = "XX科技";
         item_04.time = "2个小时前";
@@ -136,7 +260,7 @@ public class DataUtil {
         item_04.likeCount = 2;
         list.add(item_04);
 
-        FitemWeibo item_05 = new FitemWeibo();
+        FitemWeiboToJSON item_05 = new FitemWeiboToJSON();
         item_05.headId = R.drawable.iv_head_00005;
         item_05.nickname = "X视新闻";
         item_05.time = "6个小时前";
@@ -147,7 +271,7 @@ public class DataUtil {
         item_05.likeCount = 188;
         list.add(item_05);
 
-        FitemWeibo item_06 = new FitemWeibo();
+        FitemWeiboToJSON item_06 = new FitemWeiboToJSON();
         item_06.headId = R.drawable.iv_head_00006;
         item_06.nickname = "XX头条";
         item_06.time = "今天凌晨";
@@ -157,7 +281,7 @@ public class DataUtil {
         item_06.likeCount = 92;
         list.add(item_06);
 
-        FitemWeibo item_07 = new FitemWeibo();
+        FitemWeiboToJSON item_07 = new FitemWeiboToJSON();
         item_07.headId = R.drawable.iv_head_00007;
         item_07.nickname = "科技新一";
         item_07.time = "昨天";
@@ -168,7 +292,7 @@ public class DataUtil {
         item_07.likeCount = 189;
         list.add(item_07);
 
-        FitemWeibo item_08 = new FitemWeibo();
+        FitemWeiboToJSON item_08 = new FitemWeiboToJSON();
         item_08.headId = R.drawable.iv_head_00008;
         item_08.nickname = "X浪新闻热搜热榜";
         item_08.time = "昨天";
@@ -178,7 +302,7 @@ public class DataUtil {
         item_08.likeCount = 5;
         list.add(item_08);
 
-        FitemWeibo item_09 = new FitemWeibo();
+        FitemWeiboToJSON item_09 = new FitemWeiboToJSON();
         item_09.headId = R.drawable.iv_head_00009;
         item_09.nickname = "ZXXX知客";
         item_09.time = "前天";
@@ -189,7 +313,7 @@ public class DataUtil {
         item_09.likeCount = 20;
         list.add(item_09);
 
-        FitemWeibo item_10 = new FitemWeibo();
+        FitemWeiboToJSON item_10 = new FitemWeiboToJSON();
         item_10.headId = R.drawable.iv_head_00010;
         item_10.nickname = "科技XX";
         item_10.time = "8月2日";
@@ -209,7 +333,7 @@ public class DataUtil {
      * @return
      */
     public static String getDataToWeiBoJSON(){
-        List<FitemWeibo> list = getDataToWeiBo();
+        List<FitemWeiboToJSON> list = getDataToWeiBoToJSON();
 
         String json = JSON.toJSONString(list);
         json = "{\"code\":200,\"message\":\"\",\"data\":" + json + ",\"request_time\":1623750442016,\"response_time\":1623750442141}";

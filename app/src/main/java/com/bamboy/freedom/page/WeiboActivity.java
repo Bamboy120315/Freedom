@@ -15,8 +15,10 @@ import com.bamboy.freedom.R;
 import com.bamboy.freedom.freedom.BaseViewHolder;
 import com.bamboy.freedom.freedom.FreedomAdapter;
 import com.bamboy.freedom.freedom.clickcallback.OnClickCallback;
+import com.bamboy.freedom.page.bean.WeiboBean;
 import com.bamboy.freedom.page.fitem.FitemWeibo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WeiboActivity extends AppCompatActivity implements OnClickCallback {
@@ -34,7 +36,11 @@ public class WeiboActivity extends AppCompatActivity implements OnClickCallback 
         recycler = findViewById(R.id.recycler);
 
         // 获取数据
-        mList = getDataToWeiBo();
+        mList = new ArrayList<>();
+        List<WeiboBean> list = getDataToWeiBo();
+        for (WeiboBean bean : list) {
+            mList.add(new FitemWeibo(bean));
+        }
 
         // 初始化列表
         notifyList();
@@ -61,7 +67,7 @@ public class WeiboActivity extends AppCompatActivity implements OnClickCallback 
     @Override
     public void onClick(View view, int position, BaseViewHolder holder) {
         String action = "";
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.rl_share:
                 action = "转发";
                 break;
@@ -72,7 +78,7 @@ public class WeiboActivity extends AppCompatActivity implements OnClickCallback 
                 action = "点赞";
                 break;
         }
-        Toast.makeText(this, "点击了第"+(position+1)+"个条目的“"+action+"”", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "点击了第" + (position + 1) + "个条目的“" + action + "”", Toast.LENGTH_SHORT).show();
     }
 
 }

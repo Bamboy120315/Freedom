@@ -6,47 +6,21 @@ import android.text.TextUtils;
 import com.bamboy.freedom.R;
 import com.bamboy.freedom.freedom.BaseViewHolder;
 import com.bamboy.freedom.freedom.FreedomItem;
+import com.bamboy.freedom.page.bean.WeiboBean;
 
 import java.util.List;
 
 public class FitemWeibo extends FreedomItem {
 
+    public WeiboBean bean;
+
     /**
-     * 头像
+     * 构造
+     * @param bean
      */
-    public int headId;
-    /**
-     * 昵称
-     */
-    public String nickname;
-    /**
-     * 时间
-     */
-    public String time;
-    /**
-     * 内容
-     */
-    public String content;
-    /**
-     * 图片
-     */
-    public int contentImg;
-    /**
-     * 定位
-     */
-    public String location;
-    /**
-     * 转发数
-     */
-    public int shareCount;
-    /**
-     * 评论数
-     */
-    public int speechCount;
-    /**
-     * 点赞数
-     */
-    public int likeCount;
+    public FitemWeibo(WeiboBean bean) {
+        this.bean = bean;
+    }
 
     @Override
     protected int bindLayoutId() {
@@ -57,23 +31,23 @@ public class FitemWeibo extends FreedomItem {
     public void initBindView(Context context, BaseViewHolder vh, List<FreedomItem> list, int position) {
         vh
                 // 显示 头像
-                .setImageResource(R.id.iv_head, headId)
+                .setImageResource(R.id.iv_head, bean.headId)
                 // 显示 昵称
-                .setText(R.id.tv_nickname, nickname)
+                .setText(R.id.tv_nickname, bean.nickname)
                 // 显示 时间
-                .setText(R.id.tv_time, time)
+                .setText(R.id.tv_time, bean.time)
                 // 显示 内容
-                .setText(R.id.tv_content, content)
+                .setText(R.id.tv_content, bean.content)
                 // 显示 位置
-                .setText(R.id.tv_location, location == null ? "" : location)
+                .setText(R.id.tv_location, bean.location == null ? "" : bean.location)
                 // 显示 位置容器是否显示
-                .setVisible(R.id.rl_location, !TextUtils.isEmpty(location))
+                .setVisible(R.id.rl_location, !TextUtils.isEmpty(bean.location))
                 // 显示 转发数
-                .setText(R.id.tv_share, shareCount <= 0 ? "转发" : String.valueOf(shareCount))
+                .setText(R.id.tv_share, bean.shareCount <= 0 ? "转发" : String.valueOf(bean.shareCount))
                 // 显示 评论数
-                .setText(R.id.tv_speech, speechCount <= 0 ? "评论" : String.valueOf(speechCount))
+                .setText(R.id.tv_speech, bean.speechCount <= 0 ? "评论" : String.valueOf(bean.speechCount))
                 // 显示 点赞数
-                .setText(R.id.tv_like, likeCount <= 0 ? "点赞" : String.valueOf(likeCount))
+                .setText(R.id.tv_like, bean.likeCount <= 0 ? "点赞" : String.valueOf(bean.likeCount))
 
                 // 设置点击事件 --> 转发
                 .setOnClickListener(R.id.rl_share)
@@ -83,11 +57,11 @@ public class FitemWeibo extends FreedomItem {
                 .setOnClickListener(R.id.rl_like);
 
         // 处理内容里面的图片
-        if (contentImg <= 0) {
+        if (bean.contentImg <= 0) {
             vh.setGone(R.id.iv_content);
         } else {
             vh.setVisible(R.id.iv_content);
-            vh.setImageResource(R.id.iv_content, contentImg);
+            vh.setImageResource(R.id.iv_content, bean.contentImg);
         }
     }
 }

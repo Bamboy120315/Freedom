@@ -12,6 +12,7 @@ import com.alibaba.fastjson.JSON;
 import com.bamboy.freedom.R;
 import com.bamboy.freedom.freedom.FreedomAdapter;
 import com.bamboy.freedom.page.fitem.FitemWeibo;
+import com.bamboy.freedom.page.fitem.FitemWeiboToJSON;
 import com.bamboy.freedom.page.modle.WeiboNetworkModle;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ import java.util.List;
 public class WeiboJsonActivity extends AppCompatActivity {
 
     RecyclerView recycler;
-    List<FitemWeibo> mList;
+    List<FitemWeiboToJSON> mList;
     FreedomAdapter mAdapter;
 
     @Override
