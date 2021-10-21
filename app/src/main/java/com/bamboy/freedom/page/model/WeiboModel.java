@@ -1,6 +1,6 @@
-package com.bamboy.freedom.page.bean;
+package com.bamboy.freedom.page.model;
 
-public class WeiboBean {
+public class WeiboModel {
     /**
      * 头像
      */

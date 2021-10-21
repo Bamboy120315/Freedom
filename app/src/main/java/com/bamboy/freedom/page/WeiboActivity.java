@@ -15,7 +15,7 @@ import com.bamboy.freedom.R;
 import com.bamboy.freedom.freedom.BaseViewHolder;
 import com.bamboy.freedom.freedom.FreedomAdapter;
 import com.bamboy.freedom.freedom.clickcallback.OnClickCallback;
-import com.bamboy.freedom.page.bean.WeiboBean;
+import com.bamboy.freedom.page.model.WeiboModel;
 import com.bamboy.freedom.page.fitem.FitemWeibo;
 
 import java.util.ArrayList;
@@ -37,8 +37,8 @@ public class WeiboActivity extends AppCompatActivity implements OnClickCallback 
 
         // 获取数据
         mList = new ArrayList<>();
-        List<WeiboBean> list = getDataToWeiBo();
-        for (WeiboBean bean : list) {
+        List<WeiboModel> list = getDataToWeiBo();
+        for (WeiboModel bean : list) {
             mList.add(new FitemWeibo(bean));
         }
 

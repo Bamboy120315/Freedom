@@ -1,7 +1,6 @@
 package com.bamboy.freedom.page;
 
 import static com.bamboy.freedom.page.util.DataUtil.getDataToGiftList;
-import static com.bamboy.freedom.page.util.DataUtil.getDataToWeiBo;
 
 import android.os.Bundle;
 import android.view.View;
@@ -15,10 +14,8 @@ import com.bamboy.freedom.freedom.BaseViewHolder;
 import com.bamboy.freedom.freedom.FreedomAdapter;
 import com.bamboy.freedom.freedom.FreedomItem;
 import com.bamboy.freedom.page.fitem.FitemGift;
-import com.bamboy.freedom.page.modle.GiftModle;
 import com.bamboy.freedom.page.util.DensityUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SingleCheckedActivity extends AppCompatActivity {

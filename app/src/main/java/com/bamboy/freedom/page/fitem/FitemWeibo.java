@@ -6,19 +6,19 @@ import android.text.TextUtils;
 import com.bamboy.freedom.R;
 import com.bamboy.freedom.freedom.BaseViewHolder;
 import com.bamboy.freedom.freedom.FreedomItem;
-import com.bamboy.freedom.page.bean.WeiboBean;
+import com.bamboy.freedom.page.model.WeiboModel;
 
 import java.util.List;
 
 public class FitemWeibo extends FreedomItem {
 
-    public WeiboBean bean;
+    public WeiboModel bean;
 
     /**
      * 构造
      * @param bean
      */
-    public FitemWeibo(WeiboBean bean) {
+    public FitemWeibo(WeiboModel bean) {
         this.bean = bean;
     }
 

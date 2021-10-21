@@ -1,8 +1,8 @@
-package com.bamboy.freedom.page.modle;
+package com.bamboy.freedom.page.model;
 
 import java.io.Serializable;
 
-public class GiftModle implements Serializable {
+public class GiftModel implements Serializable {
 
     /**
      * 礼物Id

@@ -6,7 +6,7 @@ import android.view.View;
 import com.bamboy.freedom.R;
 import com.bamboy.freedom.freedom.BaseViewHolder;
 import com.bamboy.freedom.freedom.FreedomItem;
-import com.bamboy.freedom.page.modle.GiftModle;
+import com.bamboy.freedom.page.model.GiftModel;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class FitemGift extends FreedomItem {
     /**
      * 介绍
      */
-    public GiftModle modle;
+    public GiftModel modle;
     /**
      * 是否被选中
      */
@@ -30,7 +30,7 @@ public class FitemGift extends FreedomItem {
      *
      * @param modle 介绍
      */
-    public FitemGift(GiftModle modle) {
+    public FitemGift(GiftModel modle) {
         this.modle = modle;
     }
 

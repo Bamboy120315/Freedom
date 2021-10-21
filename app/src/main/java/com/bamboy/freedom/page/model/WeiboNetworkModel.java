@@ -1,12 +1,11 @@
-package com.bamboy.freedom.page.modle;
+package com.bamboy.freedom.page.model;
 
-import com.bamboy.freedom.page.fitem.FitemWeibo;
 import com.bamboy.freedom.page.fitem.FitemWeiboToJSON;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class WeiboNetworkModle implements Serializable {
+public class WeiboNetworkModel implements Serializable {
     public int code;
     public String message;
     public List<FitemWeiboToJSON> data;

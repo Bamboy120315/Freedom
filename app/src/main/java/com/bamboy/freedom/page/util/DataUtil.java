@@ -14,16 +14,15 @@ import com.bamboy.freedom.page.SingleCheckedDefaultActivity;
 import com.bamboy.freedom.page.WeChatItemShakeActivity;
 import com.bamboy.freedom.page.WeiboActivity;
 import com.bamboy.freedom.page.WeiboJsonActivity;
-import com.bamboy.freedom.page.bean.WeiboBean;
+import com.bamboy.freedom.page.model.WeiboModel;
 import com.bamboy.freedom.page.fitem.FitemDynamisSpan;
 import com.bamboy.freedom.page.fitem.FitemFunction;
 import com.bamboy.freedom.page.fitem.FitemGift;
 import com.bamboy.freedom.page.fitem.FitemIntroduce;
 import com.bamboy.freedom.page.fitem.FitemPhoto;
 import com.bamboy.freedom.page.fitem.FitemWeChat;
-import com.bamboy.freedom.page.fitem.FitemWeibo;
 import com.bamboy.freedom.page.fitem.FitemWeiboToJSON;
-import com.bamboy.freedom.page.modle.GiftModle;
+import com.bamboy.freedom.page.model.GiftModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,119 +89,119 @@ public class DataUtil {
      *
      * @return
      */
-    public static List<WeiboBean> getDataToWeiBo() {
-        List<WeiboBean> list = new ArrayList<>();
+    public static List<WeiboModel> getDataToWeiBo() {
+        List<WeiboModel> list = new ArrayList<>();
 
-        WeiboBean weiboBean_01 = new WeiboBean();
-        weiboBean_01.headId = R.drawable.iv_head_00001;
-        weiboBean_01.nickname = "不吃卤面条";
-        weiboBean_01.time = "15:01";
-        weiboBean_01.content = "扫黑风暴，越更新剧情越拖沓，预告看着挺好看，怎么一到正片就开始拖沓。";
-        weiboBean_01.contentImg = 0;
-        weiboBean_01.location = "上海";
-        weiboBean_01.shareCount = 0;
-        weiboBean_01.speechCount = 3;
-        weiboBean_01.likeCount = 0;
-        list.add(weiboBean_01);
+        WeiboModel weiboModel_01 = new WeiboModel();
+        weiboModel_01.headId = R.drawable.iv_head_00001;
+        weiboModel_01.nickname = "不吃卤面条";
+        weiboModel_01.time = "15:01";
+        weiboModel_01.content = "扫黑风暴，越更新剧情越拖沓，预告看着挺好看，怎么一到正片就开始拖沓。";
+        weiboModel_01.contentImg = 0;
+        weiboModel_01.location = "上海";
+        weiboModel_01.shareCount = 0;
+        weiboModel_01.speechCount = 3;
+        weiboModel_01.likeCount = 0;
+        list.add(weiboModel_01);
 
-        WeiboBean weiboBean_02 = new WeiboBean();
-        weiboBean_02.headId = R.drawable.iv_head_00002;
-        weiboBean_02.nickname = "西瓜皮味瓜子壳";
-        weiboBean_02.time = "14:56";
-        weiboBean_02.content = "我就想点个鸡排，看哈评价，都能碰到bkpp";
-        weiboBean_02.contentImg = R.drawable.iv_weibo_content_02;
-        weiboBean_02.shareCount = 1;
-        weiboBean_02.speechCount = 0;
-        weiboBean_02.likeCount = 0;
-        list.add(weiboBean_02);
+        WeiboModel weiboModel_02 = new WeiboModel();
+        weiboModel_02.headId = R.drawable.iv_head_00002;
+        weiboModel_02.nickname = "西瓜皮味瓜子壳";
+        weiboModel_02.time = "14:56";
+        weiboModel_02.content = "我就想点个鸡排，看哈评价，都能碰到bkpp";
+        weiboModel_02.contentImg = R.drawable.iv_weibo_content_02;
+        weiboModel_02.shareCount = 1;
+        weiboModel_02.speechCount = 0;
+        weiboModel_02.likeCount = 0;
+        list.add(weiboModel_02);
 
-        WeiboBean weiboBean_03 = new WeiboBean();
-        weiboBean_03.headId = R.drawable.iv_head_00003;
-        weiboBean_03.nickname = "XX日报";
-        weiboBean_03.time = "14:40";
-        weiboBean_03.content = "【中广联合会召开座谈会：#对违法失德失范艺人零容忍#】8月19日，中国广播电视社会组织联合会职业道德建设委员会在京召开广播电视文艺工作者加强职业道德建设座谈会，就最近一段时间个别艺人的违法失德失范行为发声。\n制片人张明智，导演郑晓龙、阎建钢……";
-        weiboBean_03.contentImg = R.drawable.iv_weibo_content_03;
-        weiboBean_03.location = "北京";
-        weiboBean_03.shareCount = 54;
-        weiboBean_03.speechCount = 194;
-        weiboBean_03.likeCount = 1009;
-        list.add(weiboBean_03);
+        WeiboModel weiboModel_03 = new WeiboModel();
+        weiboModel_03.headId = R.drawable.iv_head_00003;
+        weiboModel_03.nickname = "XX日报";
+        weiboModel_03.time = "14:40";
+        weiboModel_03.content = "【中广联合会召开座谈会：#对违法失德失范艺人零容忍#】8月19日，中国广播电视社会组织联合会职业道德建设委员会在京召开广播电视文艺工作者加强职业道德建设座谈会，就最近一段时间个别艺人的违法失德失范行为发声。\n制片人张明智，导演郑晓龙、阎建钢……";
+        weiboModel_03.contentImg = R.drawable.iv_weibo_content_03;
+        weiboModel_03.location = "北京";
+        weiboModel_03.shareCount = 54;
+        weiboModel_03.speechCount = 194;
+        weiboModel_03.likeCount = 1009;
+        list.add(weiboModel_03);
 
-        WeiboBean weiboBean_04 = new WeiboBean();
-        weiboBean_04.headId = R.drawable.iv_head_00004;
-        weiboBean_04.nickname = "XX科技";
-        weiboBean_04.time = "2个小时前";
-        weiboBean_04.content = "【LG与韩国酒店合作推广生发头盔】\n\nLG电子宣布将陆续与韩国数家豪华酒店合作，为酒店客户提供免费体验LG生发头盔、超声波洗面奶、超声波身体清洁器和眼部皮肤护肤装置的机会。简单的说就是酒店房间内将会标配这些产品，住多久就可以用多久[杰瑞]。";
-        weiboBean_04.contentImg = R.drawable.iv_weibo_content_04;
-        weiboBean_04.shareCount = 2;
-        weiboBean_04.speechCount = 7;
-        weiboBean_04.likeCount = 2;
-        list.add(weiboBean_04);
+        WeiboModel weiboModel_04 = new WeiboModel();
+        weiboModel_04.headId = R.drawable.iv_head_00004;
+        weiboModel_04.nickname = "XX科技";
+        weiboModel_04.time = "2个小时前";
+        weiboModel_04.content = "【LG与韩国酒店合作推广生发头盔】\n\nLG电子宣布将陆续与韩国数家豪华酒店合作，为酒店客户提供免费体验LG生发头盔、超声波洗面奶、超声波身体清洁器和眼部皮肤护肤装置的机会。简单的说就是酒店房间内将会标配这些产品，住多久就可以用多久[杰瑞]。";
+        weiboModel_04.contentImg = R.drawable.iv_weibo_content_04;
+        weiboModel_04.shareCount = 2;
+        weiboModel_04.speechCount = 7;
+        weiboModel_04.likeCount = 2;
+        list.add(weiboModel_04);
 
-        WeiboBean weiboBean_05 = new WeiboBean();
-        weiboBean_05.headId = R.drawable.iv_head_00005;
-        weiboBean_05.nickname = "X视新闻";
-        weiboBean_05.time = "6个小时前";
-        weiboBean_05.content = "【网友：#聂海胜太空照里有我#[哈哈]】今天，两名航天员成功出舱后，#聂海胜和地球合影#。留存“太空大片”↓↓↓网友：地球上有我，所以照片里有我！骄傲了~";
-        weiboBean_05.location = "北京";
-        weiboBean_05.shareCount = 16;
-        weiboBean_05.speechCount = 39;
-        weiboBean_05.likeCount = 188;
-        list.add(weiboBean_05);
+        WeiboModel weiboModel_05 = new WeiboModel();
+        weiboModel_05.headId = R.drawable.iv_head_00005;
+        weiboModel_05.nickname = "X视新闻";
+        weiboModel_05.time = "6个小时前";
+        weiboModel_05.content = "【网友：#聂海胜太空照里有我#[哈哈]】今天，两名航天员成功出舱后，#聂海胜和地球合影#。留存“太空大片”↓↓↓网友：地球上有我，所以照片里有我！骄傲了~";
+        weiboModel_05.location = "北京";
+        weiboModel_05.shareCount = 16;
+        weiboModel_05.speechCount = 39;
+        weiboModel_05.likeCount = 188;
+        list.add(weiboModel_05);
 
-        WeiboBean weiboBean_06 = new WeiboBean();
-        weiboBean_06.headId = R.drawable.iv_head_00006;
-        weiboBean_06.nickname = "XX头条";
-        weiboBean_06.time = "今天凌晨";
-        weiboBean_06.content = "据@新华社 消息：中国载人航天工程办公室20日透露，目前，神舟十二号载人飞行任务已经进入第三个月。后续，航天员乘组将继续开展空间科学实验和技术试验，计划9月中旬返回东风着陆场。返回前，神舟飞船还将进行绕飞及径向交会试验。";
-        weiboBean_06.shareCount = 17;
-        weiboBean_06.speechCount = 12;
-        weiboBean_06.likeCount = 92;
-        list.add(weiboBean_06);
+        WeiboModel weiboModel_06 = new WeiboModel();
+        weiboModel_06.headId = R.drawable.iv_head_00006;
+        weiboModel_06.nickname = "XX头条";
+        weiboModel_06.time = "今天凌晨";
+        weiboModel_06.content = "据@新华社 消息：中国载人航天工程办公室20日透露，目前，神舟十二号载人飞行任务已经进入第三个月。后续，航天员乘组将继续开展空间科学实验和技术试验，计划9月中旬返回东风着陆场。返回前，神舟飞船还将进行绕飞及径向交会试验。";
+        weiboModel_06.shareCount = 17;
+        weiboModel_06.speechCount = 12;
+        weiboModel_06.likeCount = 92;
+        list.add(weiboModel_06);
 
-        WeiboBean weiboBean_07 = new WeiboBean();
-        weiboBean_07.headId = R.drawable.iv_head_00007;
-        weiboBean_07.nickname = "科技新一";
-        weiboBean_07.time = "昨天";
-        weiboBean_07.content = "一提到拍照好的手机，你第一印象会想到：____________。";
-        weiboBean_07.location = "深圳";
-        weiboBean_07.shareCount = 7;
-        weiboBean_07.speechCount = 135;
-        weiboBean_07.likeCount = 189;
-        list.add(weiboBean_07);
+        WeiboModel weiboModel_07 = new WeiboModel();
+        weiboModel_07.headId = R.drawable.iv_head_00007;
+        weiboModel_07.nickname = "科技新一";
+        weiboModel_07.time = "昨天";
+        weiboModel_07.content = "一提到拍照好的手机，你第一印象会想到：____________。";
+        weiboModel_07.location = "深圳";
+        weiboModel_07.shareCount = 7;
+        weiboModel_07.speechCount = 135;
+        weiboModel_07.likeCount = 189;
+        list.add(weiboModel_07);
 
-        WeiboBean weiboBean_08 = new WeiboBean();
-        weiboBean_08.headId = R.drawable.iv_head_00008;
-        weiboBean_08.nickname = "X浪新闻热搜热榜";
-        weiboBean_08.time = "昨天";
-        weiboBean_08.content = "一款雪糕，中外市场用两种料？今天#联合利华承认梦龙中外用料双标#，又一个网红产品翻车。网红高端产品为何频繁成全网黑惹众怒？消费者究竟是为了营销买单还是为了品质买单？#网红产品水有多深#？一起来揭密>>";
-        weiboBean_08.shareCount = 7;
-        weiboBean_08.speechCount = 2;
-        weiboBean_08.likeCount = 5;
-        list.add(weiboBean_08);
+        WeiboModel weiboModel_08 = new WeiboModel();
+        weiboModel_08.headId = R.drawable.iv_head_00008;
+        weiboModel_08.nickname = "X浪新闻热搜热榜";
+        weiboModel_08.time = "昨天";
+        weiboModel_08.content = "一款雪糕，中外市场用两种料？今天#联合利华承认梦龙中外用料双标#，又一个网红产品翻车。网红高端产品为何频繁成全网黑惹众怒？消费者究竟是为了营销买单还是为了品质买单？#网红产品水有多深#？一起来揭密>>";
+        weiboModel_08.shareCount = 7;
+        weiboModel_08.speechCount = 2;
+        weiboModel_08.likeCount = 5;
+        list.add(weiboModel_08);
 
-        WeiboBean weiboBean_09 = new WeiboBean();
-        weiboBean_09.headId = R.drawable.iv_head_00009;
-        weiboBean_09.nickname = "ZXXX知客";
-        weiboBean_09.time = "前天";
-        weiboBean_09.content = "快进到付费宝贝靠前展示？";
-        weiboBean_09.contentImg = R.drawable.iv_weibo_content_09;
-        weiboBean_09.shareCount = 1;
-        weiboBean_09.speechCount = 0;
-        weiboBean_09.likeCount = 20;
-        list.add(weiboBean_09);
+        WeiboModel weiboModel_09 = new WeiboModel();
+        weiboModel_09.headId = R.drawable.iv_head_00009;
+        weiboModel_09.nickname = "ZXXX知客";
+        weiboModel_09.time = "前天";
+        weiboModel_09.content = "快进到付费宝贝靠前展示？";
+        weiboModel_09.contentImg = R.drawable.iv_weibo_content_09;
+        weiboModel_09.shareCount = 1;
+        weiboModel_09.speechCount = 0;
+        weiboModel_09.likeCount = 20;
+        list.add(weiboModel_09);
 
-        WeiboBean weiboBean_10 = new WeiboBean();
-        weiboBean_10.headId = R.drawable.iv_head_00010;
-        weiboBean_10.nickname = "科技XX";
-        weiboBean_10.time = "8月2日";
-        weiboBean_10.content = "真是起名鬼才 ……";
-        weiboBean_10.contentImg = R.drawable.iv_weibo_content_10;
-        weiboBean_10.location = "杭州";
-        weiboBean_10.shareCount = 1;
-        weiboBean_10.speechCount = 14;
-        weiboBean_10.likeCount = 0;
-        list.add(weiboBean_10);
+        WeiboModel weiboModel_10 = new WeiboModel();
+        weiboModel_10.headId = R.drawable.iv_head_00010;
+        weiboModel_10.nickname = "科技XX";
+        weiboModel_10.time = "8月2日";
+        weiboModel_10.content = "真是起名鬼才 ……";
+        weiboModel_10.contentImg = R.drawable.iv_weibo_content_10;
+        weiboModel_10.location = "杭州";
+        weiboModel_10.shareCount = 1;
+        weiboModel_10.speechCount = 14;
+        weiboModel_10.likeCount = 0;
+        list.add(weiboModel_10);
 
         return list;
     }
@@ -464,238 +463,238 @@ public class DataUtil {
     public static List<FitemGift> getDataToGiftList(){
         List<FitemGift> list = new ArrayList<>();
 
-        GiftModle modle_01 = new GiftModle();
+        GiftModel modle_01 = new GiftModel();
         modle_01.goods_id = 1;
         modle_01.images_static = R.drawable.iv_gift_01;
         modle_01.name = "粉丝牌";
         modle_01.beans = 10;
         list.add(new FitemGift(modle_01));
 
-        GiftModle modle_02 = new GiftModle();
+        GiftModel modle_02 = new GiftModel();
         modle_02.goods_id = 2;
         modle_02.images_static = R.drawable.iv_gift_02;
         modle_02.name = "玫瑰花";
         modle_02.beans = 1314;
         list.add(new FitemGift(modle_02));
 
-        GiftModle modle_03 = new GiftModle();
+        GiftModel modle_03 = new GiftModel();
         modle_03.goods_id = 3;
         modle_03.images_static = R.drawable.iv_gift_03;
         modle_03.name = "拿去花";
         modle_03.beans = 123;
         list.add(new FitemGift(modle_03));
 
-        GiftModle modle_04 = new GiftModle();
+        GiftModel modle_04 = new GiftModel();
         modle_04.goods_id = 4;
         modle_04.images_static = R.drawable.iv_gift_04;
         modle_04.name = "私人飞机";
         modle_04.beans = 8888;
         list.add(new FitemGift(modle_04));
 
-        GiftModle modle_05 = new GiftModle();
+        GiftModel modle_05 = new GiftModel();
         modle_05.goods_id = 5;
         modle_05.images_static = R.drawable.iv_gift_05;
         modle_05.name = "想你了";
         modle_05.beans = 521;
         list.add(new FitemGift(modle_05));
 
-        GiftModle modle_06 = new GiftModle();
+        GiftModel modle_06 = new GiftModel();
         modle_06.goods_id = 6;
         modle_06.images_static = R.drawable.iv_gift_06;
         modle_06.name = "西瓜";
         modle_06.beans = 55;
         list.add(new FitemGift(modle_06));
 
-        GiftModle modle_07 = new GiftModle();
+        GiftModel modle_07 = new GiftModel();
         modle_07.goods_id = 7;
         modle_07.images_static = R.drawable.iv_gift_07;
         modle_07.name = "乘风破浪";
         modle_07.beans = 1888;
         list.add(new FitemGift(modle_07));
 
-        GiftModle modle_08 = new GiftModle();
+        GiftModel modle_08 = new GiftModel();
         modle_08.goods_id = 8;
         modle_08.images_static = R.drawable.iv_gift_08;
         modle_08.name = "粉丝卡";
         modle_08.beans = 10;
         list.add(new FitemGift(modle_08));
 
-        GiftModle modle_09 = new GiftModle();
+        GiftModel modle_09 = new GiftModel();
         modle_09.goods_id = 9;
         modle_09.images_static = R.drawable.iv_gift_09;
         modle_09.name = "棒棒糖";
         modle_09.beans = 1;
         list.add(new FitemGift(modle_09));
 
-        GiftModle modle_10 = new GiftModle();
+        GiftModel modle_10 = new GiftModel();
         modle_10.goods_id = 10;
         modle_10.images_static = R.drawable.iv_gift_10;
         modle_10.name = "蛋糕";
         modle_10.beans = 88;
         list.add(new FitemGift(modle_10));
 
-        GiftModle modle_11 = new GiftModle();
+        GiftModel modle_11 = new GiftModel();
         modle_11.goods_id = 11;
         modle_11.images_static = R.drawable.iv_gift_11;
         modle_11.name = "粽意你";
         modle_11.beans = 521;
         list.add(new FitemGift(modle_11));
 
-        GiftModle modle_12 = new GiftModle();
+        GiftModel modle_12 = new GiftModel();
         modle_12.goods_id = 12;
         modle_12.images_static = R.drawable.iv_gift_12;
         modle_12.name = "吃豆豆";
         modle_12.beans = 122;
         list.add(new FitemGift(modle_12));
 
-        GiftModle modle_13 = new GiftModle();
+        GiftModel modle_13 = new GiftModel();
         modle_13.goods_id = 13;
         modle_13.images_static = R.drawable.iv_gift_13;
         modle_13.name = "丘比特";
         modle_13.beans = 2;
         list.add(new FitemGift(modle_13));
 
-        GiftModle modle_14 = new GiftModle();
+        GiftModel modle_14 = new GiftModel();
         modle_14.goods_id = 14;
         modle_14.images_static = R.drawable.iv_gift_14;
         modle_14.name = "bear";
         modle_14.beans = 188;
         list.add(new FitemGift(modle_14));
 
-        GiftModle modle_15 = new GiftModle();
+        GiftModel modle_15 = new GiftModel();
         modle_15.goods_id = 15;
         modle_15.images_static = R.drawable.iv_gift_15;
         modle_15.name = "快乐星球";
         modle_15.beans = 588;
         list.add(new FitemGift(modle_15));
 
-        GiftModle modle_16 = new GiftModle();
+        GiftModel modle_16 = new GiftModel();
         modle_16.goods_id = 16;
         modle_16.images_static = R.drawable.iv_gift_16;
         modle_16.name = "魅影五周年";
         modle_16.beans = 999;
         list.add(new FitemGift(modle_16));
 
-        GiftModle modle_17 = new GiftModle();
+        GiftModel modle_17 = new GiftModel();
         modle_17.goods_id = 17;
         modle_17.images_static = R.drawable.iv_gift_17;
         modle_17.name = "干杯";
         modle_17.beans = 22;
         list.add(new FitemGift(modle_17));
 
-        GiftModle modle_18 = new GiftModle();
+        GiftModel modle_18 = new GiftModel();
         modle_18.goods_id = 18;
         modle_18.images_static = R.drawable.iv_gift_18;
         modle_18.name = "小龙虾";
         modle_18.beans = 99;
         list.add(new FitemGift(modle_18));
 
-        GiftModle modle_19 = new GiftModle();
+        GiftModel modle_19 = new GiftModel();
         modle_19.goods_id = 19;
         modle_19.images_static = R.drawable.iv_gift_19;
         modle_19.name = "篝火晚会";
         modle_19.beans = 168;
         list.add(new FitemGift(modle_19));
 
-        GiftModle modle_20 = new GiftModle();
+        GiftModel modle_20 = new GiftModel();
         modle_20.goods_id = 20;
         modle_20.images_static = R.drawable.iv_gift_20;
         modle_20.name = "篝火";
         modle_20.beans = 68;
         list.add(new FitemGift(modle_20));
 
-        GiftModle modle_21 = new GiftModle();
+        GiftModel modle_21 = new GiftModel();
         modle_21.goods_id = 21;
         modle_21.images_static = R.drawable.iv_gift_21;
         modle_21.name = "爆照";
         modle_21.beans = 68;
         list.add(new FitemGift(modle_21));
 
-        GiftModle modle_22 = new GiftModle();
+        GiftModel modle_22 = new GiftModel();
         modle_22.goods_id = 22;
         modle_22.images_static = R.drawable.iv_gift_22;
         modle_22.name = "面基";
         modle_22.beans = 69;
         list.add(new FitemGift(modle_22));
 
-        GiftModle modle_23 = new GiftModle();
+        GiftModel modle_23 = new GiftModel();
         modle_23.goods_id = 23;
         modle_23.images_static = R.drawable.iv_gift_23;
         modle_23.name = "凯风";
         modle_23.beans = 88;
         list.add(new FitemGift(modle_23));
 
-        GiftModle modle_24 = new GiftModle();
+        GiftModel modle_24 = new GiftModel();
         modle_24.goods_id = 24;
         modle_24.images_static = R.drawable.iv_gift_24;
         modle_24.name = "歌神";
         modle_24.beans = 121;
         list.add(new FitemGift(modle_24));
 
-        GiftModle modle_25 = new GiftModle();
+        GiftModel modle_25 = new GiftModel();
         modle_25.goods_id = 25;
         modle_25.images_static = R.drawable.iv_gift_25;
         modle_25.name = "美妙音符";
         modle_25.beans = 521;
         list.add(new FitemGift(modle_25));
 
-        GiftModle modle_26 = new GiftModle();
+        GiftModel modle_26 = new GiftModel();
         modle_26.goods_id = 26;
         modle_26.images_static = R.drawable.iv_gift_26;
         modle_26.name = "荧光棒";
         modle_26.beans = 99;
         list.add(new FitemGift(modle_26));
 
-        GiftModle modle_27 = new GiftModle();
+        GiftModel modle_27 = new GiftModel();
         modle_27.goods_id = 27;
         modle_27.images_static = R.drawable.iv_gift_27;
         modle_27.name = "水枪";
         modle_27.beans = 199;
         list.add(new FitemGift(modle_27));
 
-        GiftModle modle_28 = new GiftModle();
+        GiftModel modle_28 = new GiftModel();
         modle_28.goods_id = 28;
         modle_28.images_static = R.drawable.iv_gift_28;
         modle_28.name = "爱你";
         modle_28.beans = 521;
         list.add(new FitemGift(modle_28));
 
-        GiftModle modle_29 = new GiftModle();
+        GiftModel modle_29 = new GiftModel();
         modle_29.goods_id = 29;
         modle_29.images_static = R.drawable.iv_gift_29;
         modle_29.name = "玉米";
         modle_29.beans = 188;
         list.add(new FitemGift(modle_29));
 
-        GiftModle modle_30 = new GiftModle();
+        GiftModel modle_30 = new GiftModel();
         modle_30.goods_id = 30;
         modle_30.images_static = R.drawable.iv_gift_30;
         modle_30.name = "萝卜";
         modle_30.beans = 166;
         list.add(new FitemGift(modle_30));
 
-        GiftModle modle_31 = new GiftModle();
+        GiftModel modle_31 = new GiftModel();
         modle_31.goods_id = 31;
         modle_31.images_static = R.drawable.iv_gift_31;
         modle_31.name = "棒棒";
         modle_31.beans = 11;
         list.add(new FitemGift(modle_31));
 
-        GiftModle modle_32 = new GiftModle();
+        GiftModel modle_32 = new GiftModel();
         modle_32.goods_id = 32;
         modle_32.images_static = R.drawable.iv_gift_32;
         modle_32.name = "呦呦";
         modle_32.beans = 66;
         list.add(new FitemGift(modle_32));
 
-        GiftModle modle_33 = new GiftModle();
+        GiftModel modle_33 = new GiftModel();
         modle_33.goods_id = 33;
         modle_33.images_static = R.drawable.iv_gift_33;
         modle_33.name = "福袋";
         modle_33.beans = 5;
         list.add(new FitemGift(modle_33));
 
-        GiftModle modle_34 = new GiftModle();
+        GiftModel modle_34 = new GiftModel();
         modle_34.goods_id = 34;
         modle_34.images_static = R.drawable.iv_gift_34;
         modle_34.name = "炸弹";

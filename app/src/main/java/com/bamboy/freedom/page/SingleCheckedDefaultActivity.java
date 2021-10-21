@@ -14,10 +14,8 @@ import com.bamboy.freedom.freedom.BaseViewHolder;
 import com.bamboy.freedom.freedom.FreedomAdapter;
 import com.bamboy.freedom.freedom.FreedomItem;
 import com.bamboy.freedom.page.fitem.FitemGift;
-import com.bamboy.freedom.page.modle.GiftModle;
 import com.bamboy.freedom.page.util.DensityUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SingleCheckedDefaultActivity extends AppCompatActivity {

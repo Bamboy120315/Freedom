@@ -11,11 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alibaba.fastjson.JSON;
 import com.bamboy.freedom.R;
 import com.bamboy.freedom.freedom.FreedomAdapter;
-import com.bamboy.freedom.page.fitem.FitemWeibo;
 import com.bamboy.freedom.page.fitem.FitemWeiboToJSON;
-import com.bamboy.freedom.page.modle.WeiboNetworkModle;
+import com.bamboy.freedom.page.model.WeiboNetworkModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class WeiboJsonActivity extends AppCompatActivity {
@@ -36,7 +34,7 @@ public class WeiboJsonActivity extends AppCompatActivity {
         String json = getDataToWeiBoJSON();
 
         // 解析json
-        WeiboNetworkModle modle = JSON.parseObject(json, WeiboNetworkModle.class);
+        WeiboNetworkModel modle = JSON.parseObject(json, WeiboNetworkModel.class);
         // 解析json
         mList = modle.data;
 
